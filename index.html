@@ -3,25 +3,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Guitar & Keys Rig — Amp + Pedalboard (+ Leslie + Blackstar)</title>
+<title>Blues Harp Tone — Fully Wired</title>
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 
-<!-- Tailwind (CDN) -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter','system-ui','sans-serif'],
-        display: ['Orbitron','Inter','system-ui','sans-serif'],
-      },
-      colors: { chrome:{ ring:'#20324a' }, accent:{ DEFAULT:'#60a5fa', deep:'#3b82f6' } },
-      boxShadow: { panel:'0 14px 32px rgba(0,0,0,0.45)' }
+      fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Orbitron','Inter','system-ui','sans-serif'] },
+      colors:{ chrome:{ring:'#20324a'}, accent:{DEFAULT:'#60a5fa', deep:'#3b82f6'} },
+      boxShadow:{ panel:'0 14px 32px rgba(0,0,0,0.45)' }
     }
   }
 }
@@ -42,7 +37,7 @@ tailwind.config = {
 #vu-wrap{height:clamp(18px,4.5vw,26px);}
 .vu-mini{height:14px;}
 canvas{display:block;width:100%;height:100%;}
-.slotbtn{padding:.25rem .5rem;border-radius:.375rem;font-size:11px;background:rgba(15,23,42,.7);border:1px solid rgba(71,85,105,.8);}
+.slotbtn{padding:.25rem .5rem;border-radius:.375rem;font-size:11px;background:rgba(2,6,23,.6);border:1px solid rgba(71,85,105,.8);}
 #message-box{position:fixed;top:-100px;left:50%;transform:translateX(-50%);background:#ef4444;color:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.3);font-weight:700;z-index:1000;transition:top .45s;}
 </style>
 </head>
@@ -51,20 +46,21 @@ canvas{display:block;width:100%;height:100%;}
 <div id="message-box">Mic permission needed. Click Start and allow access.</div>
 
 <main class="mx-auto p-3 sm:p-4">
-<section class="mx-auto w-full max-w-[360px] sm:max-w-[560px] md:max-w-[940px]
+<section class="mx-auto w-full max-w-[360px] sm:max-w-[560px] md:max-w-[880px]
                  rounded-3xl border border-chrome-ring shadow-panel relative overflow-hidden
                  bg-[radial-gradient(140%_120%_at_0%_0%,#1f2f4d_0%,rgba(24,42,76,0.95)_45%,#152a49_100%)]">
-  <div class="pointer-events-none absolute inset-0 rounded-3xl" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.10), inset 0 -1px 0 rgba(0,0,0,.45)"></div>
+  <div class="pointer-events-none absolute inset-0 rounded-3xl" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.10), inset 0 -2px 0 rgba(0,0,0,.45)"></div>
 
   <!-- Header -->
   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-slate-700/60 px-4 pt-4 pb-3">
-    <div>
-      <h1 class="font-display text-lg sm:text-xl tracking-wide drop-shadow-[0_0_12px_rgba(96,165,250,0.45)]">GUITAR & KEYS RIG</h1>
-      <p class="text-[12px] text-slate-300">Click <strong>Start Audio</strong> → allow mic → choose monitor.</p>
+    <div class="flex-1 min-w-0">
+      <h1 class="font-display text-lg sm:text-xl tracking-wide drop-shadow-[0_0_12px_rgba(96,165,250,0.45)]">BLUES HARP TONE</h1>
+      <p class="text-[12px] text-slate-300">Click <strong>Start Audio</strong> → allow mic → set Monitor to <strong>Processed</strong> to hear the chain.</p>
     </div>
+
     <div class="flex items-center gap-3 flex-wrap">
       <div class="flex items-center gap-2 text-[11px]">
-        <label for="monitor-mode" class="text-slate-200/90">Monitor</label>
+        <label class="text-slate-200/90">Monitor</label>
         <select id="monitor-mode" class="px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
           <option value="direct" selected>Direct (safe)</option>
           <option value="processed">Processed</option>
@@ -82,7 +78,7 @@ canvas{display:block;width:100%;height:100%;}
     </div>
   </div>
 
-  <!-- Device + meters -->
+  <!-- Devices + meters -->
   <div class="px-4 pt-2 space-y-2">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
       <div class="flex items-center gap-2 flex-1">
@@ -119,10 +115,10 @@ canvas{display:block;width:100%;height:100%;}
     </div>
   </div>
 
-  <!-- Controls -->
+  <!-- Controls (same as previous) -->
   <div class="px-4 pb-5 pt-3 space-y-4">
 
-    <!-- Input/Gate/Trim -->
+    <!-- Input / Gate -->
     <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
       <div class="grid grid-cols-12 items-center gap-2">
         <div class="col-span-12 sm:col-span-6">
@@ -146,232 +142,142 @@ canvas{display:block;width:100%;height:100%;}
       </div>
     </div>
 
-    <!-- Amp & Cab -->
+    <!-- HPF / Drive -->
     <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
-      <div class="grid grid-cols-12 gap-2 items-center">
-        <div class="col-span-12 md:col-span-6">
-          <div class="flex items-center gap-2">
-            <label class="text-[12px] uppercase tracking-wider text-slate-100">Amp Model</label>
-            <select id="amp-model" class="ml-2 px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
-              <option value="tweed">Tweed (’50s)</option>
-              <option value="blackface">Blackface Clean</option>
-              <option value="ac30">Vox AC30</option>
-              <option value="plexi">Marshall Plexi</option>
-              <option value="modern">Modern High Gain</option>
-              <option value="jazz">Jazz Clean (JC)</option>
-              <option value="blackstar_clean">Blackstar Clean (HT)</option>
-              <option value="blackstar_crunch">Blackstar Crunch (HT)</option>
+      <div class="grid grid-cols-12 items-center gap-2">
+        <div class="col-span-12 sm:col-span-6">
+          <div class="flex items-center justify-between">
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">HPF</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="hpf-enable" class="toggle-pill toggle-on"><span class="toggle-dot dot-on"></span></button></div>
+          </div>
+          <div class="mt-2 grid grid-cols-12 items-center gap-2">
+            <div class="col-span-4 text-[11px]">Freq</div><div class="col-span-6"><input id="hpf-freq" class="hslider" type="range" min="20" max="200" step="1" value="100"/></div><div class="col-span-2 text-right text-[11px]"><span id="hpf-val">100</span> Hz</div>
+          </div>
+        </div>
+        <div class="col-span-12 sm:col-span-6 mt-3 sm:mt-0">
+          <div class="flex items-center justify-between">
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">Drive</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="drive-enable" class="toggle-pill toggle-on"><span class="toggle-dot dot-on"></span></button></div>
+          </div>
+          <div class="mt-2 grid grid-cols-12 items-center gap-2">
+            <div class="col-span-4 text-[11px]">Gain</div><div class="col-span-6"><input id="amp-gain" class="hslider" type="range" min="0" max="100" step="1" value="25"/></div><div class="col-span-2 text-right text-[11px]"><span id="gain-value">25</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hum killer -->
+    <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
+      <div class="grid grid-cols-12 items-center gap-2">
+        <div class="col-span-12 sm:col-span-6">
+          <div class="flex items-center justify-between">
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">Hum Killer</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="hum-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
+          </div>
+          <div class="mt-2 flex items-center gap-2 text-[12px]">
+            <label class="text-slate-300">Mains:</label>
+            <select id="hum-mains" class="px-2 py-1 bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
+              <option value="60" selected>60 Hz</option><option value="50">50 Hz</option>
             </select>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-3 text-[11px]">Gain</div><div class="col-span-7"><input id="amp-gain" class="hslider" type="range" min="0" max="100" step="1" value="25"/></div><div class="col-span-2 text-right text-[11px]"><span id="amp-gain-val">25</span></div>
-            <div class="col-span-3 text-[11px] mt-2">Bass</div><div class="col-span-7 mt-2"><input id="amp-bass" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-bass-val">0</span> dB</div>
-            <div class="col-span-3 text-[11px] mt-2">Mid</div><div class="col-span-7 mt-2"><input id="amp-mid" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-mid-val">0</span> dB</div>
-            <div class="col-span-3 text-[11px] mt-2">Treble</div><div class="col-span-7 mt-2"><input id="amp-treble" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-treble-val">0</span> dB</div>
-            <div class="col-span-3 text-[11px] mt-2">Presence</div><div class="col-span-7 mt-2"><input id="amp-pres" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-pres-val">0</span> dB</div>
-            <div class="col-span-3 text-[11px] mt-2">Master</div><div class="col-span-7 mt-2"><input id="amp-master" class="hslider" type="range" min="0" max="1" step="0.01" value="1"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-master-val">1.00</span></div>
-            <!-- Blackstar ISF appears only on Blackstar models -->
-            <div class="col-span-3 text-[11px] mt-2">ISF</div><div class="col-span-7 mt-2"><input id="amp-isf" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="amp-isf-val">0.50</span></div>
+            <label class="ml-3 text-slate-300">2nd Harmonic</label>
+            <button id="hum-2nd" class="toggle-pill"><span class="toggle-dot"></span></button>
           </div>
         </div>
-
-        <div class="col-span-12 md:col-span-6">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Cab / LPF</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="cab-enable" class="toggle-pill toggle-on"><span class="toggle-dot dot-on"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-3 text-[11px]">Cab</div>
-            <div class="col-span-9"><select id="cab-type" class="w-full px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
-              <option value="1x8">1x8 Combo</option>
-              <option value="1x12">1x12</option>
-              <option value="2x12">2x12</option>
-              <option value="4x12">4x12</option>
-            </select></div>
-
-            <div class="col-span-3 text-[11px] mt-2">Cab LPF</div>
-            <div class="col-span-7 mt-2"><input id="cab-lpf" class="hslider" type="range" min="4000" max="12000" step="100" value="9000"/></div>
-            <div class="col-span-2 text-right text-[11px] mt-2"><span id="cab-lpf-val">9000</span> Hz</div>
-          </div>
+        <div class="col-span-12 sm:col-span-6 text-[12px] text-slate-300/90">
+          Notch filters placed pre-drive. Use when you can’t fix ground loops.
         </div>
       </div>
     </div>
 
-    <!-- Dirt (Overdrive / Distortion / Fuzz) -->
+    <!-- 3-Band EQ -->
     <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
-      <div class="grid grid-cols-12 gap-2">
-        <!-- Overdrive -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Overdrive</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="od-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Gain</div><div class="col-span-6"><input id="od-gain" class="hslider" type="range" min="0" max="40" step="1" value="12"/></div><div class="col-span-2 text-right text-[11px]"><span id="od-gain-val">12</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Tone</div><div class="col-span-6 mt-2"><input id="od-tone" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="od-tone-val">0.50</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="od-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.6"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="od-mix-val">0.60</span></div>
-          </div>
-        </div>
-        <!-- Distortion -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Distortion</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="dist-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Gain</div><div class="col-span-6"><input id="dist-gain" class="hslider" type="range" min="0" max="60" step="1" value="0"/></div><div class="col-span-2 text-right text-[11px]"><span id="dist-gain-val">0</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Tone</div><div class="col-span-6 mt-2"><input id="dist-tone" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="dist-tone-val">0.50</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="dist-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.4"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="dist-mix-val">0.40</span></div>
-          </div>
-        </div>
-        <!-- Fuzz -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Fuzz</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="fuzz-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Gain</div><div class="col-span-6"><input id="fuzz-gain" class="hslider" type="range" min="0" max="70" step="1" value="0"/></div><div class="col-span-2 text-right text-[11px]"><span id="fuzz-gain-val">0</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Tone</div><div class="col-span-6 mt-2"><input id="fuzz-tone" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="fuzz-tone-val">0.50</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="fuzz-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.4"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="fuzz-mix-val">0.40</span></div>
-          </div>
-        </div>
+      <div class="mb-1 flex items-center justify-between">
+        <div class="text-[12px] uppercase tracking-wider text-slate-100">3-Band EQ</div>
+        <div class="text-[11px] text-slate-200/80">Low 120 Hz • Mid 1.2 kHz • High 6 kHz</div>
+      </div>
+      <div class="grid grid-cols-12 items-center gap-2">
+        <div class="col-span-4 text-[11px]">Low</div><div class="col-span-6"><input id="eq-low" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px]"><span id="eq-low-val">0</span> dB</div>
+        <div class="col-span-4 text-[11px] mt-2">Mid</div><div class="col-span-6 mt-2"><input id="eq-mid" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="eq-mid-val">0</span> dB</div>
+        <div class="col-span-4 text-[11px] mt-2">High</div><div class="col-span-6 mt-2"><input id="eq-high" class="hslider" type="range" min="-12" max="12" step="0.5" value="0"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="eq-high-val">0</span> dB</div>
       </div>
     </div>
 
-    <!-- Wah / Modulation -->
+    <!-- Compressor / Reverb / Slapback -->
     <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
-      <div class="grid grid-cols-12 gap-2">
-        <!-- Wah -->
-        <div class="col-span-12 md:col-span-4">
+      <div class="grid grid-cols-12 items-center gap-2">
+        <div class="col-span-12 md:col-span-7">
           <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Wah</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="wah-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">Compressor</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="comp-enable" class="toggle-pill toggle-on"><span class="toggle-dot dot-on"></span></button></div>
           </div>
           <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Freq</div><div class="col-span-6"><input id="wah-freq" class="hslider" type="range" min="350" max="2200" step="1" value="1400"/></div><div class="col-span-2 text-right text-[11px]"><span id="wah-freq-val">1400</span> Hz</div>
-            <div class="col-span-4 text-[11px] mt-2">Q</div><div class="col-span-6 mt-2"><input id="wah-q" class="hslider" type="range" min="0.3" max="8" step="0.1" value="3.2"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="wah-q-val">3.2</span></div>
+            <div class="col-span-3 text-[11px]">Thresh</div><div class="col-span-6"><input id="comp-thresh" class="hslider" type="range" min="-50" max="0" step="1" value="-22"/></div><div class="col-span-3 text-right text-[11px]"><span id="comp-thresh-val">-22</span> dB</div>
+            <div class="col-span-3 text-[11px] mt-2">Ratio</div><div class="col-span-6 mt-2"><input id="comp-ratio" class="hslider" type="range" min="1" max="20" step="0.5" value="3.0"/></div><div class="col-span-3 text-right text-[11px] mt-2"><span id="comp-ratio-val">3.0</span>:1</div>
+            <div class="col-span-3 text-[11px] mt-2">Attack</div><div class="col-span-6 mt-2"><input id="comp-attack" class="hslider" type="range" min="0.001" max="0.1" step="0.001" value="0.012"/></div><div class="col-span-3 text-right text-[11px] mt-2"><span id="comp-attack-val">0.012</span>s</div>
+            <div class="col-span-3 text-[11px] mt-2">Release</div><div class="col-span-6 mt-2"><input id="comp-release" class="hslider" type="range" min="0.02" max="0.5" step="0.01" value="0.18"/></div><div class="col-span-3 text-right text-[11px] mt-2"><span id="comp-release-val">0.18</span>s</div>
+            <div class="col-span-3 text-[11px] mt-2">Makeup</div><div class="col-span-6 mt-2"><input id="comp-makeup" class="hslider" type="range" min="0" max="12" step="0.5" value="2"/></div><div class="col-span-3 text-right text-[11px] mt-2"><span id="comp-makeup-val">2</span> dB</div>
           </div>
         </div>
 
-        <!-- Chorus -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Chorus</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="chorus-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Rate</div><div class="col-span-6"><input id="chorus-rate" class="hslider" type="range" min="0.05" max="6" step="0.01" value="0.6"/></div><div class="col-span-2 text-right text-[11px]"><span id="chorus-rate-val">0.60</span> Hz</div>
-            <div class="col-span-4 text-[11px] mt-2">Depth</div><div class="col-span-6 mt-2"><input id="chorus-depth" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="chorus-depth-val">0.50</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="chorus-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.25"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="chorus-mix-val">0.25</span></div>
-          </div>
-        </div>
-
-        <!-- Phaser -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Phaser</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="phaser-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Rate</div><div class="col-span-6"><input id="phaser-rate" class="hslider" type="range" min="0.05" max="5" step="0.01" value="0.4"/></div><div class="col-span-2 text-right text-[11px]"><span id="phaser-rate-val">0.40</span> Hz</div>
-            <div class="col-span-4 text-[11px] mt-2">Depth</div><div class="col-span-6 mt-2"><input id="phaser-depth" class="hslider" type="range" min="0" max="1" step="0.01" value="0.7"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="phaser-depth-val">0.70</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="phaser-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.2"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="phaser-mix-val">0.20</span></div>
-          </div>
-        </div>
-
-        <!-- Tremolo -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="mt-3 md:mt-4 flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Tremolo</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="trem-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Rate</div><div class="col-span-6"><input id="trem-rate" class="hslider" type="range" min="0.5" max="12" step="0.01" value="4.5"/></div><div class="col-span-2 text-right text-[11px]"><span id="trem-rate-val">4.50</span> Hz</div>
-            <div class="col-span-4 text-[11px] mt-2">Depth</div><div class="col-span-6 mt-2"><input id="trem-depth" class="hslider" type="range" min="0" max="1" step="0.01" value="0.6"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="trem-depth-val">0.60</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="trem-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.4"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="trem-mix-val">0.40</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Delay / Reverb / Leslie (NEW) -->
-    <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
-      <div class="grid grid-cols-12 gap-2">
-        <!-- Delay -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Delay</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="delay-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
-          </div>
-          <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Time</div><div class="col-span-6"><input id="delay-time" class="hslider" type="range" min="0.05" max="1.2" step="0.005" value="0.35"/></div><div class="col-span-2 text-right text-[11px]"><span id="delay-time-val">0.35</span>s</div>
-            <div class="col-span-4 text-[11px] mt-2">Feedback</div><div class="col-span-6 mt-2"><input id="delay-feedback" class="hslider" type="range" min="0" max="0.95" step="0.01" value="0.45"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="delay-feedback-val">0.45</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="delay-mix" class="hslider" type="range" min="0" max="0.8" step="0.01" value="0.25"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="delay-mix-val">0.25</span></div>
-          </div>
-        </div>
-
-        <!-- Reverb -->
-        <div class="col-span-12 md:col-span-4">
+        <div class="col-span-12 md:col-span-5 mt-3 md:mt-0">
           <div class="flex items-center justify-between">
             <div class="text-[12px] uppercase tracking-wider text-slate-100">Reverb</div>
             <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="reverb-enable" class="toggle-pill toggle-on"><span class="toggle-dot dot-on"></span></button></div>
           </div>
           <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Mix</div><div class="col-span-6"><input id="reverb-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.15"/></div><div class="col-span-2 text-right text-[11px]"><span id="reverb-mix-val">0.15</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Length</div><div class="col-span-6 mt-2"><input id="reverb-length" class="hslider" type="range" min="0.6" max="6" step="0.1" value="2.4"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="reverb-length-val">2.4</span>s</div>
+            <div class="col-span-4 text-[11px]">Mix</div><div class="col-span-6"><input id="reverb-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.15"/></div><div class="col-span-2 text-right text-[11px]"><span id="reverb-value">0.15</span></div>
           </div>
         </div>
 
-        <!-- Leslie / Rotary (NEW) -->
-        <div class="col-span-12 md:col-span-4">
-          <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Leslie / Rotary</div>
-            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="leslie-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
+        <div class="col-span-12 md:col-span-5">
+          <div class="mt-3 md:mt-2 flex items-center justify-between">
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">Slapback</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="delay-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
           </div>
           <div class="mt-2 grid grid-cols-12 items-center gap-2">
-            <div class="col-span-4 text-[11px]">Mode</div>
-            <div class="col-span-8"><select id="leslie-mode" class="w-full px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
-              <option value="slow">Slow</option>
-              <option value="fast">Fast</option>
-              <option value="brake">Brake</option>
-            </select></div>
-
-            <div class="col-span-4 text-[11px] mt-2">Ramp</div><div class="col-span-6 mt-2"><input id="leslie-ramp" class="hslider" type="range" min="0.1" max="3" step="0.05" value="0.8"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="leslie-ramp-val">0.80</span>s</div>
-            <div class="col-span-4 text-[11px] mt-2">Crossover</div><div class="col-span-6 mt-2"><input id="leslie-xo" class="hslider" type="range" min="400" max="2500" step="10" value="800"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="leslie-xo-val">800</span> Hz</div>
-            <div class="col-span-4 text-[11px] mt-2">Width</div><div class="col-span-6 mt-2"><input id="leslie-width" class="hslider" type="range" min="0" max="1" step="0.01" value="0.85"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="leslie-width-val">0.85</span></div>
-            <div class="col-span-4 text-[11px] mt-2">Mix</div><div class="col-span-6 mt-2"><input id="leslie-mix" class="hslider" type="range" min="0" max="1" step="0.01" value="0.5"/></div><div class="col-span-2 text-right text-[11px] mt-2"><span id="leslie-mix-val">0.50</span></div>
+            <div class="col-span-4 text-[11px]">Mix</div><div class="col-span-6"><input id="delay-mix" class="hslider" type="range" min="0" max="0.8" step="0.01" value="0.2"/></div><div class="col-span-2 text-right text-[11px]"><span id="delay-val">0.20</span></div>
           </div>
-          <p class="mt-1 text-[11px] text-slate-300/80">Horn fast ~6.5 Hz / slow ~0.8 Hz • Drum fast ~4.5 Hz / slow ~0.5 Hz • Brake = ramp to 0.</p>
+          <p class="mt-1 text-[11px] text-slate-300/80">110 ms single repeat, parallel post-comp, pre-reverb.</p>
         </div>
       </div>
     </div>
 
-    <!-- Output + Presets -->
+    <!-- LPF / Output / Presets -->
     <div class="rounded-2xl border border-slate-700 bg-gradient-to-b from-[#19335b] to-[#152a49] p-3" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.4);">
       <div class="grid grid-cols-12 items-center gap-2">
         <div class="col-span-12 sm:col-span-6">
           <div class="flex items-center justify-between">
-            <div class="text-[12px] uppercase tracking-wider text-slate-100">Output Level</div>
-            <div class="text-[11px]"><span id="out-val">1.00</span></div>
+            <div class="text-[12px] uppercase tracking-wider text-slate-100">LPF</div>
+            <div class="flex items-center gap-2"><span class="text-[11px]">On</span><button id="lpf-enable" class="toggle-pill"><span class="toggle-dot"></span></button></div>
           </div>
-          <input id="output-level" class="hslider mt-2" type="range" min="0" max="1" step="0.01" value="1"/>
+          <div class="mt-2 grid grid-cols-12 items-center gap-2">
+            <div class="col-span-4 text-[11px]">Freq</div><div class="col-span-6"><input id="lpf-freq" class="hslider" type="range" min="4000" max="12000" step="100" value="9500"/></div><div class="col-span-2 text-right text-[11px]"><span id="lpf-val">9500</span> Hz</div>
+          </div>
         </div>
 
-        <div class="col-span-12 sm:col-span-6">
+        <div class="col-span-12 sm:col-span-6 mt-2 sm:mt-0">
           <div class="grid grid-cols-12 items-center gap-2">
-            <div class="col-span-12">
+            <div class="col-span-4 text-[11px] uppercase tracking-wider text-slate-100">Output Level</div>
+            <div class="col-span-6"><input id="output-level" class="hslider" type="range" min="0" max="1" step="0.01" value="1"/></div>
+            <div class="col-span-2 text-right text-[11px]"><span id="out-val">1.00</span></div>
+
+            <div class="col-span-12 mt-2">
               <div class="flex items-center gap-2">
                 <select id="preset-select" class="w-full px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md">
                   <option value="">— Built-in Presets —</option>
-                  <option value="Clean Chorus">Clean Chorus</option>
-                  <option value="’80s Rack">’80s Rack</option>
-                  <option value="Plexi Lead">Plexi Lead</option>
-                  <option value="AC30 Chime">AC30 Chime</option>
-                  <option value="Blackstar Crunch">Blackstar Crunch</option>
-                  <option value="Rotary Organ">Rotary Organ</option>
-                  <option value="Jazz Lush">Jazz Lush</option>
-                  <option value="Surf Trem">Surf Trem</option>
+                  <option>Classic Chicago</option>
+                  <option>Crunch Amp</option>
+                  <option>Fat Low End</option>
+                  <option>Bright Cut</option>
+                  <option>Little Walter Cup</option>
+                  <option>Country Clean</option>
+                  <option>Dark Mellow</option>
+                  <option>Lo-Fi Amp</option>
+                  <option>Big Room</option>
+                  <option>Cut Through Band</option>
+                  <option>Modern Blues Rock</option>
+                  <option>Vintage Jazz Tone</option>
+                  <option>Country Bright</option>
                 </select>
                 <button id="preset-apply" class="px-2 py-1 text-[11px] rounded-md bg-slate-900/60 ring-1 ring-slate-600 hover:bg-slate-900">Load</button>
               </div>
@@ -379,7 +285,7 @@ canvas{display:block;width:100%;height:100%;}
           </div>
         </div>
 
-        <!-- User Presets -->
+        <!-- User slots -->
         <div class="col-span-12 mt-3">
           <div class="flex flex-col sm:flex-row gap-2">
             <select id="user-slot-select" class="flex-1 px-2 py-1 text-[12px] bg-slate-900/70 ring-1 ring-slate-600 rounded-md"></select>
@@ -403,18 +309,16 @@ canvas{display:block;width:100%;height:100%;}
 </main>
 
 <script>
-/* ===== Helpers ===== */
+/* ========= Utils ========= */
 const $=id=>document.getElementById(id);
 const dBToLinear=d=>Math.pow(10,d/20);
 const linearToDb=x=>(x>0?20*Math.log10(x):-Infinity);
 function toast(msg){ const b=$('message-box'); b.textContent=msg; b.style.top='20px'; setTimeout(()=>b.style.top='-100px',3000); }
+function setToggle(btn,on){ btn.classList.toggle('toggle-on',on); const dot=btn.querySelector('.toggle-dot'); if(dot) dot.classList.toggle('dot-on',on); }
 function isOn(btn){ return btn.classList.contains('toggle-on'); }
-function setToggle(btn,on){ btn.classList.toggle('toggle-on',on); const d=btn.querySelector('.toggle-dot'); if(d) d.classList.toggle('dot-on',on); }
 function clamp(n,min,max){ return Math.min(max,Math.max(min,n)); }
 
-/* ===== State / UI Refs ===== */
-let audioContext, micSource, isRunning=false, currentDeviceId=null;
-let rafId, vuMode='rms';
+/* ========= UI Refs ========= */
 const btnStart=$('btn-start'), statusLed=$('status-led'), statusText=$('status-text');
 const devSel=$('device-select'), devRef=$('device-refresh');
 const srOut=$('sr-readout'), latOut=$('lat-readout');
@@ -422,89 +326,81 @@ const monitorSel=$('monitor-mode'), osDSPBtn=$('os-dsp');
 
 const trimSl=$('input-trim'), trimVal=$('trim-val'), btnCal=$('btn-calibrate');
 const gateBtn=$('gate-enable'), gateTh=$('gate-threshold'), gateRl=$('gate-release'), gateThVal=$('gate-thresh-val'), gateRlVal=$('gate-rel-val');
+const hpfBtn=$('hpf-enable'), hpfFreq=$('hpf-freq'), hpfVal=$('hpf-val');
 
-const ampModel=$('amp-model'), ampGain=$('amp-gain'), ampGainVal=$('amp-gain-val'), ampBass=$('amp-bass'), ampBassVal=$('amp-bass-val'), ampMid=$('amp-mid'), ampMidVal=$('amp-mid-val'), ampTre=$('amp-treble'), ampTreVal=$('amp-treble-val'), ampPres=$('amp-pres'), ampPresVal=$('amp-pres-val'), ampMaster=$('amp-master'), ampMasterVal=$('amp-master-val'), ampISF=$('amp-isf'), ampISFVal=$('amp-isf-val');
+const humBtn=$('hum-enable'), humMains=$('hum-mains'), hum2nd=$('hum-2nd');
 
-const cabBtn=$('cab-enable'), cabType=$('cab-type'), cabLPF=$('cab-lpf'), cabLPFVal=$('cab-lpf-val');
+const drvBtn=$('drive-enable'), ampGain=$('amp-gain'), gainValue=$('gain-value');
 
-const odBtn=$('od-enable'), odGain=$('od-gain'), odGainVal=$('od-gain-val'), odTone=$('od-tone'), odToneVal=$('od-tone-val'), odMix=$('od-mix'), odMixVal=$('od-mix-val');
-const distBtn=$('dist-enable'), distGain=$('dist-gain'), distGainVal=$('dist-gain-val'), distTone=$('dist-tone'), distToneVal=$('dist-tone-val'), distMix=$('dist-mix'), distMixVal=$('dist-mix-val');
-const fuzzBtn=$('fuzz-enable'), fuzzGain=$('fuzz-gain'), fuzzGainVal=$('fuzz-gain-val'), fuzzTone=$('fuzz-tone'), fuzzToneVal=$('fuzz-tone-val'), fuzzMix=$('fuzz-mix'), fuzzMixVal=$('fuzz-mix-val');
+const eqLow=$('eq-low'), eqLowVal=$('eq-low-val');
+const eqMid=$('eq-mid'), eqMidVal=$('eq-mid-val');
+const eqHigh=$('eq-high'), eqHighVal=$('eq-high-val');
 
-const wahBtn=$('wah-enable'), wahFreq=$('wah-freq'), wahFreqVal=$('wah-freq-val'), wahQ=$('wah-q'), wahQVal=$('wah-q-val');
+const compBtn=$('comp-enable'), cTh=$('comp-thresh'), cRa=$('comp-ratio'), cAt=$('comp-attack'), cRe=$('comp-release'), cMk=$('comp-makeup');
+const cThVal=$('comp-thresh-val'), cRaVal=$('comp-ratio-val'), cAtVal=$('comp-attack-val'), cReVal=$('comp-release-val'), cMkVal=$('comp-makeup-val');
 
-const chorBtn=$('chorus-enable'), chorRate=$('chorus-rate'), chorRateVal=$('chorus-rate-val'), chorDepth=$('chorus-depth'), chorDepthVal=$('chorus-depth-val'), chorMix=$('chorus-mix'), chorMixVal=$('chorus-mix-val');
-const phsBtn=$('phaser-enable'), phsRate=$('phaser-rate'), phsRateVal=$('phaser-rate-val'), phsDepth=$('phaser-depth'), phsDepthVal=$('phaser-depth-val'), phsMix=$('phaser-mix'), phsMixVal=$('phaser-mix-val');
-const tremBtn=$('trem-enable'), tremRate=$('trem-rate'), tremRateVal=$('trem-rate-val'), tremDepth=$('trem-depth'), tremDepthVal=$('trem-depth-val'), tremMix=$('trem-mix'), tremMixVal=$('trem-mix-val');
+const dlyBtn=$('delay-enable'), dlyMix=$('delay-mix'), dlyVal=$('delay-val');
+const rvbBtn=$('reverb-enable'), rvbMix=$('reverb-mix'), rvbVal=$('reverb-value');
 
-const dlyBtn=$('delay-enable'), dlyTime=$('delay-time'), dlyTimeVal=$('delay-time-val'), dlyFb=$('delay-feedback'), dlyFbVal=$('delay-feedback-val'), dlyMix=$('delay-mix'), dlyMixVal=$('delay-mix-val');
-const rvbBtn=$('reverb-enable'), rvbMix=$('reverb-mix'), rvbMixVal=$('reverb-mix-val'), rvbLen=$('reverb-length'), rvbLenVal=$('reverb-length-val');
-
-const lesBtn=$('leslie-enable'), lesMode=$('leslie-mode'), lesRamp=$('leslie-ramp'), lesRampVal=$('leslie-ramp-val'), lesXO=$('leslie-xo'), lesXOVal=$('leslie-xo-val'), lesWidth=$('leslie-width'), lesWidthVal=$('leslie-width-val'), lesMix=$('leslie-mix'), lesMixVal=$('leslie-mix-val');
+const lpfBtn=$('lpf-enable'), lpfFreq=$('lpf-freq'), lpfOut=$('lpf-val');
 
 const outSl=$('output-level'), outVal=$('out-val');
 
-const vuCanvas=$('vu-canvas'), inCanvas=$('in-canvas'), outCanvas=$('out-canvas'), vuBtn=$('vu-mode'), clipLED=$('clip-led'), limGR=$('lim-gr');
-
 const presetSel=$('preset-select'), presetApply=$('preset-apply');
-const slotSel=$('user-slot-select'), slotName=$('slot-name-input'), slotGrid=$('slot-grid');
+const slotSel=$('user-slot-select'), slotName=$('slot-name-input');
 const slotLoad=$('slot-load'), slotSave=$('slot-save'), slotRename=$('slot-rename'), slotExport=$('slot-export'), slotImport=$('slot-import'), importFile=$('import-file');
+const slotGrid=$('slot-grid');
 
-/* ===== Nodes ===== */
-let inputTrim, preAnalyser, gateGain;
-let wahFilter;
-let odWS, odToneLP, odMixGain, odDryGain;
-let distWS, distToneLP, distMixGain, distDryGain;
-let fuzzWS, fuzzToneLP, fuzzMixGain, fuzzDryGain;
-let ampPre, ampBassShelf, ampMidPeak, ampTreShelf, ampPresence, ampWS, ampMasterGain;
-let cabLPFNode;
-let chorusDelayL, chorusDelayR, chorusLFO, chorusDepthGain, chorusWet, chorusDry;
-let phaserStages=[], phaserLFO, phaserDepthGain, phaserWet, phaserDry;
-let tremLFO, tremDepthGain, tremWet, tremDry;
-let delayNode, delayFB, delayWet, delayDry;
-let reverbConv, reverbWet, reverbDry;
-let lesXOHi, lesXOLo, lesPanHi, lesPanLo, lesLFOh, lesLFOd, lesWidthGainH, lesWidthGainD, lesWet, lesDry;
-let limiter, masterOut, postAnalyser;
-let directMonGain, processedGate;
+const vuCanvas=$('vu-canvas'), inCanvas=$('in-canvas'), outCanvas=$('out-canvas'), vuModeBtn=$('vu-mode'), clipLED=$('clip-led'), limGR=$('lim-gr');
 
-/* ===== Power / Devices ===== */
-btnStart.addEventListener('click', async ()=>{ if(!isRunning) await startAudio(); else stopAudio(); });
+/* ========= Audio State ========= */
+let audioContext, micSource, running=false, currentDeviceId=null;
+
+/* Nodes */
+let inputTrim, preAnalyser, hpf, hum1, hum2, gateGain;
+let driveWS, driveWet, driveDry;
+let eqLowNode, eqMidNode, eqHighNode;
+let comp, compMakeup;
+let slapDelay, dlyWet, dlyDry;
+let rvConv, rvWet, rvDry;
+let lpfNode, limiter, procGate, masterOut, postAnalyser, directMon;
+
+/* ========= Power ========= */
+btnStart.addEventListener('click', async ()=>{ if(!running) await startAudio(); else stopAudio(); });
 
 async function startAudio(){
   try{
-    if (!navigator.mediaDevices?.getUserMedia){ toast('getUserMedia not supported'); return; }
+    if (!navigator.mediaDevices?.getUserMedia){ toast('getUserMedia not supported.'); return; }
     if (location.protocol !== 'https:' && location.hostname !== 'localhost'){ toast('Mic requires HTTPS or localhost.'); }
-    if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    if (audioContext.state === 'suspended'){ try{ await audioContext.resume(); }catch{} }
 
-    srOut.textContent = `SR: ${audioContext.sampleRate} Hz`;
+    if (!audioContext) audioContext = new (window.AudioContext||window.webkitAudioContext)();
+    if (audioContext.state==='suspended'){ try{ await audioContext.resume(); }catch{} }
+
+    srOut.textContent=`SR: ${audioContext.sampleRate} Hz`;
     const lat=(audioContext.baseLatency||0)+(audioContext.outputLatency||0);
     latOut.textContent=`Latency: ${Math.round(lat*1000)} ms`;
 
     const useDSP=isOn(osDSPBtn);
-    const constraints={ audio:{
-      echoCancellation:useDSP, noiseSuppression:useDSP, autoGainControl:useDSP,
-      channelCount:{ideal:1}, ...(currentDeviceId?{deviceId:{exact:currentDeviceId}}:{})
-    }};
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
-    micSource = audioContext.createMediaStreamSource(stream);
+    const constraints={audio:{echoCancellation:useDSP,noiseSuppression:useDSP,autoGainControl:useDSP,channelCount:{ideal:1},...(currentDeviceId?{deviceId:{exact:currentDeviceId}}:{})}};
+    const stream=await navigator.mediaDevices.getUserMedia(constraints);
+    micSource=audioContext.createMediaStreamSource(stream);
 
     await populateDevices();
     buildGraph();
+    wireControls();
     setMonitor(monitorSel.value||'direct');
 
-    isRunning=true;
-    btnStart.textContent='Stop Audio';
-    statusText.textContent='On'; statusLed.style.backgroundColor='#22c55e';
+    running=true;
+    btnStart.textContent='Stop Audio'; statusText.textContent='On'; statusLed.style.backgroundColor='#22c55e';
 
     sizeAllCanvases();
     startMeters();
+    startGateLoop();
     initSlotsUI();
-    restoreState();
   }catch(e){
     console.error(e);
     toast('Mic permission blocked/unavailable');
-    isRunning=false; btnStart.textContent='Start Audio'; statusText.textContent='Off'; statusLed.style.backgroundColor='#64748b';
+    stopAudio();
   }
 }
 
@@ -512,575 +408,348 @@ function stopAudio(){
   stopMeters();
   try{ if(micSource?.mediaStream){ micSource.mediaStream.getTracks().forEach(t=>t.stop()); } }catch{}
   try{ if(audioContext && audioContext.state!=='closed'){ audioContext.close().then(()=>{ audioContext=null; }); } }catch{}
-  isRunning=false; btnStart.textContent='Start Audio'; statusText.textContent='Off'; statusLed.style.backgroundColor='#64748b';
+  running=false; btnStart.textContent='Start Audio'; statusText.textContent='Off'; statusLed.style.backgroundColor='#64748b';
   clearCanvases();
 }
 
+/* ========= Devices ========= */
 async function populateDevices(){
   try{
     const devs=await navigator.mediaDevices.enumerateDevices();
     const inputs=devs.filter(d=>d.kind==='audioinput');
-    devSel.innerHTML=''; inputs.forEach((d,i)=>{ const o=document.createElement('option'); o.value=d.deviceId; o.textContent=d.label||`Input ${i+1}`; devSel.appendChild(o); });
-    const saved=localStorage.getItem('gtrPreferredDevice'); const target=currentDeviceId||saved;
+    devSel.innerHTML='';
+    inputs.forEach((d,i)=>{ const o=document.createElement('option'); o.value=d.deviceId; o.textContent=d.label||`Input ${i+1}`; devSel.appendChild(o); });
+    const saved=localStorage.getItem('harpPreferredDevice');
+    const target=currentDeviceId||saved;
     if(target){ const f=[...devSel.options].find(o=>o.value===target); if(f) devSel.value=target; }
-  }catch(e){ console.warn('enumerateDevices failed', e); }
+  }catch(e){ console.warn('enumerateDevices failed',e); }
 }
 devRef.addEventListener('click', populateDevices);
-devSel.addEventListener('change', ()=>{ currentDeviceId=devSel.value||null; localStorage.setItem('gtrPreferredDevice', currentDeviceId||''); if(isRunning){ stopAudio(); startAudio(); }});
+devSel.addEventListener('change', ()=>{ currentDeviceId=devSel.value||null; localStorage.setItem('harpPreferredDevice', currentDeviceId||''); if(running){ stopAudio(); startAudio(); }});
 navigator.mediaDevices?.addEventListener?.('devicechange', populateDevices);
 
-/* ===== Graph ===== */
+/* ========= Graph ========= */
 function buildGraph(){
   const ctx=audioContext;
 
-  // Core
+  // Pre
   inputTrim=ctx.createGain(); inputTrim.gain.value=dBToLinear(parseFloat(trimSl.value));
   preAnalyser=ctx.createAnalyser(); preAnalyser.fftSize=2048;
 
-  // Gate (pre-OD)
+  // HPF
+  hpf=ctx.createBiquadFilter(); hpf.type='highpass'; hpf.frequency.value=parseFloat(hpfFreq.value);
+
+  // Hum killer
+  hum1=ctx.createBiquadFilter(); hum1.type='allpass'; hum1.Q.value=25;
+  hum2=ctx.createBiquadFilter(); hum2.type='allpass'; hum2.Q.value=20;
+
+  // Gate control gain
   gateGain=ctx.createGain(); gateGain.gain.value=1;
 
-  // Wah (pre-dirt)
-  wahFilter=ctx.createBiquadFilter(); wahFilter.type='bandpass'; wahFilter.frequency.value=parseFloat(wahFreq.value); wahFilter.Q.value=parseFloat(wahQ.value);
+  // Drive (waveshaper) with blend
+  driveWS=ctx.createWaveShaper(); driveWS.curve=makeDist(parseInt(ampGain.value,10)); driveWS.oversample='4x';
+  driveWet=ctx.createGain(); driveWet.gain.value=isOn(drvBtn)?1:0;
+  driveDry=ctx.createGain(); driveDry.gain.value=isOn(drvBtn)?0:1;
 
-  // Dirt (OD / Dist / Fuzz) — parallel blend per block
-  function mkWS(curveAmt){ const ws=ctx.createWaveShaper(); ws.curve=makeDistCurve(curveAmt); ws.oversample='4x'; return ws; }
-  function mkDirt(mixInit, toneHz){
-    const ws=mkWS(30), tone=ctx.createBiquadFilter(); tone.type='lowpass'; tone.frequency.value=toneHz;
-    const wet=ctx.createGain(); wet.gain.value=mixInit; const dry=ctx.createGain(); dry.gain.value=1-mixInit;
-    return {ws,tone,wet,dry};
-  }
-  // Overdrive
-  ({ws:odWS, tone:odToneLP, wet:odMixGain, dry:odDryGain} = mkDirt(parseFloat(odMix.value), 6000));
-  // Distortion
-  ({ws:distWS, tone:distToneLP, wet:distMixGain, dry:distDryGain} = mkDirt(parseFloat(distMix.value), 5500));
-  // Fuzz
-  ({ws:fuzzWS, tone:fuzzToneLP, wet:fuzzMixGain, dry:fuzzDryGain} = mkDirt(parseFloat(fuzzMix.value), 4800));
+  // 3-band EQ
+  eqLowNode=ctx.createBiquadFilter(); eqLowNode.type='lowshelf'; eqLowNode.frequency.value=120; eqLowNode.gain.value=parseFloat(eqLow.value);
+  eqMidNode=ctx.createBiquadFilter(); eqMidNode.type='peaking'; eqMidNode.frequency.value=1200; eqMidNode.Q.value=0.9; eqMidNode.gain.value=parseFloat(eqMid.value);
+  eqHighNode=ctx.createBiquadFilter(); eqHighNode.type='highshelf'; eqHighNode.frequency.value=6000; eqHighNode.gain.value=parseFloat(eqHigh.value);
 
-  // Amp & tonestack
-  ampPre=ctx.createGain();
-  ampBassShelf=ctx.createBiquadFilter(); ampBassShelf.type='lowshelf'; ampBassShelf.frequency.value=90;
-  ampMidPeak=ctx.createBiquadFilter(); ampMidPeak.type='peaking'; ampMidPeak.frequency.value=800; ampMidPeak.Q.value=0.9;
-  ampTreShelf=ctx.createBiquadFilter(); ampTreShelf.type='highshelf'; ampTreShelf.frequency.value=3500;
-  ampWS=mkWS(35);
-  ampPresence=ctx.createBiquadFilter(); ampPresence.type='highshelf'; ampPresence.frequency.value=4500;
-  ampMasterGain=ctx.createGain(); ampMasterGain.gain.value=parseFloat(ampMaster.value);
+  // Compressor + makeup
+  comp=ctx.createDynamicsCompressor();
+  comp.threshold.value=parseFloat(cTh.value);
+  comp.ratio.value=parseFloat(cRa.value);
+  comp.attack.value=parseFloat(cAt.value);
+  comp.release.value=parseFloat(cRe.value);
+  compMakeup=ctx.createGain(); compMakeup.gain.value=dBToLinear(parseFloat(cMk.value));
 
-  // Cab
-  cabLPFNode=ctx.createBiquadFilter(); cabLPFNode.type='lowpass'; cabLPFNode.frequency.value=parseFloat(cabLPF.value);
+  // Slapback (110ms parallel)
+  slapDelay=ctx.createDelay(1.0); slapDelay.delayTime.value=0.11;
+  dlyWet=ctx.createGain(); dlyWet.gain.value=isOn(dlyBtn)?parseFloat(dlyMix.value):0;
+  dlyDry=ctx.createGain(); dlyDry.gain.value=1;
 
-  // Modulation
-  // Chorus (stereo delays with LFO)
-  chorusDelayL=ctx.createDelay(0.03); chorusDelayR=ctx.createDelay(0.03);
-  chorusLFO=ctx.createOscillator(); chorusLFO.frequency.value=parseFloat(chorRate.value);
-  chorusDepthGain=ctx.createGain(); chorusDepthGain.gain.value=parseFloat(chorDepth.value)*0.006; // ~6 ms depth max
-  chorusWet=ctx.createGain(); chorusWet.gain.value=parseFloat(chorMix.value);
-  chorusDry=ctx.createGain(); chorusDry.gain.value=1-parseFloat(chorMix.value);
+  // Reverb (parallel)
+  rvConv=ctx.createConvolver(); rvConv.buffer=createIR(2.2,1.6);
+  rvWet=ctx.createGain(); rvDry=ctx.createGain();
+  setReverbMix(parseFloat(rvbMix.value), isOn(rvbBtn));
 
-  // Phaser (4-stage allpass)
-  phaserStages=[]; for(let i=0;i<4;i++){ const ap=ctx.createBiquadFilter(); ap.type='allpass'; ap.frequency.value=1000*(i+1); phaserStages.push(ap); }
-  phaserLFO=ctx.createOscillator(); phaserLFO.frequency.value=parseFloat(phsRate.value);
-  phaserDepthGain=ctx.createGain(); phaserDepthGain.gain.value=parseFloat(phsDepth.value)*800; // mod ±Hz
-  phaserWet=ctx.createGain(); phaserWet.gain.value=parseFloat(phsMix.value);
-  phaserDry=ctx.createGain(); phaserDry.gain.value=1-parseFloat(phsMix.value);
+  // LPF
+  lpfNode=ctx.createBiquadFilter(); lpfNode.type='lowpass'; lpfNode.frequency.value=isOn(lpfBtn)?parseFloat(lpfFreq.value):22050;
 
-  // Tremolo
-  tremLFO=ctx.createOscillator(); tremLFO.frequency.value=parseFloat(tremRate.value);
-  tremDepthGain=ctx.createGain(); tremDepthGain.gain.value=parseFloat(tremDepth.value);
-  tremWet=ctx.createGain(); tremWet.gain.value=parseFloat(tremMix.value);
-  tremDry=ctx.createGain(); tremDry.gain.value=1-parseFloat(tremMix.value);
-
-  // Delay
-  delayNode=ctx.createDelay(1.2); delayNode.delayTime.value=parseFloat(dlyTime.value);
-  delayFB=ctx.createGain(); delayFB.gain.value=parseFloat(dlyFb.value);
-  delayWet=ctx.createGain(); delayWet.gain.value=parseFloat(dlyMix.value);
-  delayDry=ctx.createGain(); delayDry.gain.value=1-parseFloat(dlyMix.value);
-
-  // Reverb
-  reverbConv=ctx.createConvolver(); reverbConv.buffer=createReverbIR(parseFloat(rvbLen.value));
-  reverbWet=ctx.createGain(); reverbWet.gain.value=parseFloat(rvbMix.value);
-  reverbDry=ctx.createGain(); reverbDry.gain.value=1-parseFloat(rvbMix.value);
-
-  // Leslie / Rotary
-  lesXOHi=ctx.createBiquadFilter(); lesXOHi.type='highpass'; lesXOHi.frequency.value=parseFloat(lesXO.value);
-  lesXOLo=ctx.createBiquadFilter(); lesXOLo.type='lowpass';  lesXOLo.frequency.value=parseFloat(lesXO.value);
-  lesPanHi=new StereoPannerNode(ctx,{pan:0});
-  lesPanLo=new StereoPannerNode(ctx,{pan:0});
-  lesLFOh=ctx.createOscillator(); lesLFOd=ctx.createOscillator();
-  lesLFOh.frequency.value=0.8; // start slow
-  lesLFOd.frequency.value=0.5;
-  lesWidthGainH=ctx.createGain(); lesWidthGainH.gain.value=parseFloat(lesWidth.value);
-  lesWidthGainD=ctx.createGain(); lesWidthGainD.gain.value=parseFloat(lesWidth.value)*0.7;
-  const lfoNormH=ctx.createOscillator(); const lfoNormD=ctx.createOscillator(); // add quadrature: use cosine via 90° phase using delay? Simpler: use two LFOs with small phase offsets not needed for pan param here.
-  lesWet=ctx.createGain(); lesWet.gain.value=parseFloat(lesMix.value);
-  lesDry=ctx.createGain(); lesDry.gain.value=1-parseFloat(lesMix.value);
-
-  // Limiter + meters + output
+  // Limiter + monitor gate + output
   limiter=ctx.createDynamicsCompressor(); limiter.threshold.value=-1; limiter.knee.value=0; limiter.ratio.value=20; limiter.attack.value=0.002; limiter.release.value=0.08;
-  postAnalyser=ctx.createAnalyser(); postAnalyser.fftSize=2048;
-  processedGate=ctx.createGain(); processedGate.gain.value=0; // monitor switch
+  procGate=ctx.createGain(); procGate.gain.value=0; // muted until "Processed" selected
   masterOut=ctx.createGain(); masterOut.gain.value=parseFloat(outSl.value);
-  directMonGain=ctx.createGain(); directMonGain.gain.value=1;
+  postAnalyser=ctx.createAnalyser(); postAnalyser.fftSize=2048;
+  directMon=ctx.createGain(); directMon.gain.value=1;
 
-  /* ==== Wiring ==== */
+  /* ----- Wiring ----- */
   micSource.connect(inputTrim);
   inputTrim.connect(preAnalyser);
-  inputTrim.connect(gateGain);
 
-  // Gate control applied by loop updating gateGain.gain
-  gateGain.connect(wahFilter);
+  inputTrim.connect(hpf);
+  hpf.connect(hum1); hum1.connect(hum2);
+  hum2.connect(gateGain);
 
-  // OD block (parallel)
-  wahFilter.connect(odWS);
-  odWS.connect(odToneLP); odToneLP.connect(odMixGain);
-  wahFilter.connect(odDryGain);
+  gateGain.connect(driveWS);
+  driveWS.connect(driveWet);
+  gateGain.connect(driveDry);
+  const driveSum=ctx.createGain(); driveWet.connect(driveSum); driveDry.connect(driveSum);
 
-  // Dist block fed by OD sum
-  const odSum=ctx.createGain();
-  odMixGain.connect(odSum); odDryGain.connect(odSum);
+  driveSum.connect(eqLowNode); eqLowNode.connect(eqMidNode); eqMidNode.connect(eqHighNode); eqHighNode.connect(comp); comp.connect(compMakeup);
 
-  odSum.connect(distWS);
-  distWS.connect(distToneLP); distToneLP.connect(distMixGain);
-  odSum.connect(distDryGain);
+  compMakeup.connect(slapDelay); slapDelay.connect(dlyWet);
+  compMakeup.connect(dlyDry);
+  const dlySum=ctx.createGain(); dlyWet.connect(dlySum); dlyDry.connect(dlySum);
 
-  const distSum=ctx.createGain();
-  distMixGain.connect(distSum); distDryGain.connect(distSum);
+  compMakeup.connect(rvConv); rvConv.connect(rvWet);
+  compMakeup.connect(rvDry);
+  const rvSum=ctx.createGain(); rvWet.connect(rvSum); rvDry.connect(rvSum);
 
-  // Fuzz block from dist sum
-  distSum.connect(fuzzWS);
-  fuzzWS.connect(fuzzToneLP); fuzzToneLP.connect(fuzzMixGain);
-  distSum.connect(fuzzDryGain);
-
-  const dirtSum=ctx.createGain();
-  fuzzMixGain.connect(dirtSum); fuzzDryGain.connect(dirtSum);
-
-  // Amp stack
-  dirtSum.connect(ampPre);
-  ampPre.connect(ampBassShelf); ampBassShelf.connect(ampMidPeak); ampMidPeak.connect(ampTreShelf);
-  ampTreShelf.connect(ampWS);
-  ampWS.connect(ampPresence);
-  ampPresence.connect(ampMasterGain);
-
-  // Cab
-  ampMasterGain.connect(cabLPFNode);
-
-  // Leslie split (post-cab, pre-time fx)
-  cabLPFNode.connect(lesXOHi); cabLPFNode.connect(lesXOLo);
-  lesXOHi.connect(lesPanHi);
-  lesXOLo.connect(lesPanLo);
-
-  // LFOs → pan
-  const lesHWidth=ctx.createGain(); const lesDWidth=ctx.createGain();
-  lesLFOh.connect(lesHWidth); lesHWidth.connect(lesPanHi.pan);
-  lesLFOd.connect(lesDWidth); lesDWidth.connect(lesPanLo.pan);
-  lesHWidth.connect(lesWidthGainH); lesDWidth.connect(lesWidthGainD);
-  // (gain already set above)
-
-  // Combine rotary
-  const lesMixBus=ctx.createGain();
-  lesPanHi.connect(lesMixBus); lesPanLo.connect(lesMixBus);
-
-  // Mod FX (chorus->phaser->trem) on rotary sum
-  const modIn=lesMixBus;
-
-  // Chorus
-  const chorSplitter=ctx.createChannelSplitter(2);
-  const chorMerger=ctx.createChannelMerger(2);
-  modIn.connect(chorusDry); modIn.connect(chorSplitter);
-  chorSplitter.connect(chorusDelayL,0); chorSplitter.connect(chorusDelayR,1);
-  chorusDelayL.connect(chorusWet); chorusDelayR.connect(chorusWet);
-  chorusWet.connect(chorMerger,0,0); chorusWet.connect(chorMerger,0,1);
-  const chorusSum=ctx.createGain(); chorMerger.connect(chorusSum); chorusDry.connect(chorusSum);
-
-  // Phaser
-  const phIn=chorusSum; phIn.connect(phaserDry);
-  let phChain=phIn; phaserStages.forEach(st=>{ phChain.connect(st); phChain=st; });
-  phChain.connect(phaserWet);
-  const phSum=ctx.createGain(); phaserWet.connect(phSum); phaserDry.connect(phSum);
-
-  // Tremolo (amplitude mod)
-  const tremGain=ctx.createGain(); phSum.connect(tremGain);
-  const tremSum=ctx.createGain(); phSum.connect(tremDry); tremGain.connect(tremWet);
-  const postMod=ctx.createGain(); tremWet.connect(postMod); tremDry.connect(postMod);
-
-  // Time/space: Delay (parallel), then Reverb (parallel)
-  postMod.connect(delayNode); delayNode.connect(delayFB); delayFB.connect(delayNode);
-  delayNode.connect(delayWet);
-  postMod.connect(delayDry);
-  const delaySum=ctx.createGain(); delayWet.connect(delaySum); delayDry.connect(delaySum);
-
-  // Reverb
-  postMod.connect(reverbConv); reverbConv.connect(reverbWet);
-  postMod.connect(reverbDry);
-  const verbSum=ctx.createGain(); reverbWet.connect(verbSum); reverbDry.connect(verbSum);
-
-  // Blend Rotary (wet/dry) — lesWet mixes the whole rotary branch with dry cab
-  lesMixBus.connect(lesWet);
-  cabLPFNode.connect(lesDry);
-
-  const rotarySum=ctx.createGain(); lesWet.connect(rotarySum); lesDry.connect(rotarySum);
-
-  // Post: sum rotary -> mod -> delay -> reverb -> limiter
-  // (We already fed mod from lesMixBus; now replace postMod source with rotarySum)
-  // Rewire: use rotarySum instead of postMod source:
-  // For simplicity: postMod already contains mod outputs; so ensure rotaries feed *into* chorus path:
-  // We already connected modIn = lesMixBus earlier; lesDry goes around to preserve some stationary image.
-
-  // Final out
   const finalBus=ctx.createGain();
-  verbSum.connect(finalBus);
-  delaySum.connect(finalBus); // small additional blend if desired (already in verbSum path though)
-  finalBus.connect(limiter);
-  limiter.connect(processedGate);
-  processedGate.connect(masterOut);
+  dlySum.connect(finalBus); rvSum.connect(finalBus);
+  finalBus.connect(lpfNode);
+  lpfNode.connect(limiter);
+  limiter.connect(procGate);
+  procGate.connect(masterOut);
   masterOut.connect(postAnalyser);
   masterOut.connect(ctx.destination);
 
-  // Direct monitor
-  micSource.connect(directMonGain); directMonGain.connect(ctx.destination);
+  micSource.connect(directMon);
+  directMon.connect(ctx.destination);
 
-  // LFO start
-  chorusLFO.start(); phaserLFO.start(); tremLFO.start(); lesLFOh.start(); lesLFOd.start();
-
-  // Initial applies
-  applyAmpModel(); applyCab(); applyLeslieSpeed();
+  applyHum();
 }
 
-/* ===== Monitor Mode ===== */
+/* ========= Monitor ========= */
 function setMonitor(mode){
   if(!audioContext) return;
-  if((mode||'direct')==='processed'){
-    processedGate.gain.setTargetAtTime(1,audioContext.currentTime,0.01);
-    directMonGain.gain.setTargetAtTime(0,audioContext.currentTime,0.01);
-  }else{
-    processedGate.gain.setTargetAtTime(0,audioContext.currentTime,0.01);
-    directMonGain.gain.setTargetAtTime(1,audioContext.currentTime,0.01);
-  }
-  saveState();
-}
-monitorSel.addEventListener('change', ()=>setMonitor(monitorSel.value));
-osDSPBtn.addEventListener('click', ()=>{ setToggle(osDSPBtn,!isOn(osDSPBtn)); if(isRunning){ stopAudio(); startAudio(); } else saveState(); });
-
-/* ===== DSP helpers ===== */
-function makeDistCurve(amount){ const k=amount|0, n=44100, curve=new Float32Array(n), deg=Math.PI/180; for(let i=0;i<n;i++){ const x=(i*2/n)-1; curve[i]=(3+k)*x*20*deg/(Math.PI+k*Math.abs(x)); } return curve; }
-function createReverbIR(len=2.4){
-  if(!audioContext) return null;
-  const sr=audioContext.sampleRate, d=Math.max(0.3,Math.min(6,len)), L=Math.floor(sr*d), buf=audioContext.createBuffer(2,L,sr);
-  for(let ch=0; ch<2; ch++){ const data=buf.getChannelData(ch); for(let i=0;i<L;i++){ const t=i/L; const k=Math.pow(1-t,1.5); data[i]=(Math.random()*2-1)*k; } }
-  return buf;
-}
-
-/* ===== UI wiring & updates ===== */
-trimSl.addEventListener('input', ()=>{ trimVal.textContent=trimSl.value; if(inputTrim) inputTrim.gain.value=dBToLinear(parseFloat(trimSl.value)); saveState(); });
-btnCal.addEventListener('click', ()=>{
-  if(!isRunning){ toast('Start Audio first'); return; }
-  const td=new Uint8Array(preAnalyser.fftSize); let acc=0,n=0; const t0=performance.now();
-  (function step(){ preAnalyser.getByteTimeDomainData(td); let sum=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; sum+=v*v; } const rms=Math.sqrt(sum/td.length); acc+=rms; n++; if(performance.now()-t0<1200) requestAnimationFrame(step); else{ const avg=acc/Math.max(1,n), target=-18, targetLin=Math.pow(10,target/20); let need=20*Math.log10(targetLin/Math.max(avg,1e-6)); need=Math.max(-18,Math.min(24,need+parseFloat(trimSl.value))); trimSl.value=need.toFixed(1); trimVal.textContent=trimSl.value; if(inputTrim) inputTrim.gain.value=dBToLinear(parseFloat(trimSl.value)); } })();
-});
-
-/* Gate */
-function gateUI(){ gateThVal.textContent=gateTh.value; gateRlVal.textContent=parseFloat(gateRl.value).toFixed(2); saveState(); }
-gateTh.addEventListener('input',gateUI); gateRl.addEventListener('input',gateUI);
-gateBtn.addEventListener('click',()=>{ setToggle(gateBtn,!isOn(gateBtn)); saveState(); });
-
-/* Amp stack */
-[ampGain,ampBass,ampMid,ampTre,ampPres,ampMaster,ampISF].forEach(el=>el.addEventListener('input', syncAmpControls));
-ampModel.addEventListener('change', ()=>{ toggleISF(); applyAmpModel(true); saveState(); });
-function syncAmpControls(){
-  ampGainVal.textContent=ampGain.value; ampBassVal.textContent=ampBass.value; ampMidVal.textContent=ampMid.value; ampTreVal.textContent=ampTre.value; ampPresVal.textContent=ampPres.value; ampMasterVal.textContent=parseFloat(ampMaster.value).toFixed(2); ampISFVal.textContent=parseFloat(ampISF.value).toFixed(2);
-  applyAmpModel(); saveState();
-}
-function toggleISF(){ const show=(ampModel.value==='blackstar_clean'||ampModel.value==='blackstar_crunch'); ampISF.parentElement.parentElement.style.display= show ? 'grid' : 'none'; }
-
-/* Cab */
-[cabLPF,cabType].forEach(el=>el.addEventListener('input', ()=>{ cabLPFVal.textContent=cabLPF.value; applyCab(); saveState(); }));
-cabBtn.addEventListener('click',()=>{ setToggle(cabBtn,!isOn(cabBtn)); applyCab(); saveState(); });
-
-/* Dirt */
-function syncDirt(){ odGainVal.textContent=odGain.value; odToneVal.textContent=parseFloat(odTone.value).toFixed(2); odMixVal.textContent=parseFloat(odMix.value).toFixed(2);
-  distGainVal.textContent=distGain.value; distToneVal.textContent=parseFloat(distTone.value).toFixed(2); distMixVal.textContent=parseFloat(distMix.value).toFixed(2);
-  fuzzGainVal.textContent=fuzzGain.value; fuzzToneVal.textContent=parseFloat(fuzzTone.value).toFixed(2); fuzzMixVal.textContent=parseFloat(fuzzMix.value).toFixed(2);
-  if(odWS) odWS.curve=makeDistCurve(parseInt(odGain.value,10)+10);
-  if(distWS) distWS.curve=makeDistCurve(parseInt(distGain.value,10)+25);
-  if(fuzzWS) fuzzWS.curve=makeDistCurve(parseInt(fuzzGain.value,10)+40);
-  if(odToneLP) odToneLP.frequency.value= 3000 + 5000*parseFloat(odTone.value);
-  if(distToneLP) distToneLP.frequency.value= 2000 + 5000*parseFloat(distTone.value);
-  if(fuzzToneLP) fuzzToneLP.frequency.value= 1500 + 4500*parseFloat(fuzzTone.value);
-  if(odMixGain) odMixGain.gain.value=parseFloat(odMix.value); if(odDryGain) odDryGain.gain.value=1-parseFloat(odMix.value);
-  if(distMixGain) distMixGain.gain.value=parseFloat(distMix.value); if(distDryGain) distDryGain.gain.value=1-parseFloat(distMix.value);
-  if(fuzzMixGain) fuzzMixGain.gain.value=parseFloat(fuzzMix.value); if(fuzzDryGain) fuzzDryGain.gain.value=1-parseFloat(fuzzMix.value);
-  saveState();
-}
-;[odGain,odTone,odMix,distGain,distTone,distMix,fuzzGain,fuzzTone,fuzzMix].forEach(el=>el.addEventListener('input', syncDirt));
-odBtn.addEventListener('click',()=>{ setToggle(odBtn,!isOn(odBtn)); saveState(); });
-distBtn.addEventListener('click',()=>{ setToggle(distBtn,!isOn(distBtn)); saveState(); });
-fuzzBtn.addEventListener('click',()=>{ setToggle(fuzzBtn,!isOn(fuzzBtn)); saveState(); });
-
-/* Wah */
-function syncWah(){ wahFreqVal.textContent=wahFreq.value; wahQVal.textContent=parseFloat(wahQ.value).toFixed(1); if(wahFilter){ wahFilter.frequency.value=parseFloat(wahFreq.value); wahFilter.Q.value=parseFloat(wahQ.value); } saveState(); }
-;[wahFreq,wahQ].forEach(el=>el.addEventListener('input', syncWah));
-wahBtn.addEventListener('click',()=>{ setToggle(wahBtn,!isOn(wahBtn)); saveState(); });
-
-/* Chorus */
-function syncChor(){ chorRateVal.textContent=parseFloat(chorRate.value).toFixed(2); chorDepthVal.textContent=parseFloat(chorDepth.value).toFixed(2); chorMixVal.textContent=parseFloat(chorMix.value).toFixed(2);
-  if(chorusLFO) chorusLFO.frequency.value=parseFloat(chorRate.value);
-  if(chorusDepthGain) chorusDepthGain.gain.value=parseFloat(chorDepth.value)*0.006;
-  if(chorusWet) chorusWet.gain.value=parseFloat(chorMix.value); if(chorusDry) chorusDry.gain.value=1-parseFloat(chorMix.value);
-  saveState();
-}
-;[chorRate,chorDepth,chorMix].forEach(el=>el.addEventListener('input', syncChor));
-chorBtn.addEventListener('click',()=>{ setToggle(chorBtn,!isOn(chorBtn)); saveState(); });
-
-/* Phaser */
-function syncPhs(){
-  phsRateVal.textContent=parseFloat(phsRate.value).toFixed(2); phsDepthVal.textContent=parseFloat(phsDepth.value).toFixed(2); phsMixVal.textContent=parseFloat(phsMix.value).toFixed(2);
-  if(phaserLFO) phaserLFO.frequency.value=parseFloat(phsRate.value);
-  if(phaserStages?.length){ phaserStages.forEach((st,i)=>{ const base=500*(i+1); st.frequency.value= base + (parseFloat(phsDepth.value)*400); }); }
-  if(phaserWet) phaserWet.gain.value=parseFloat(phsMix.value); if(phaserDry) phaserDry.gain.value=1-parseFloat(phsMix.value);
-  saveState();
-}
-;[phsRate,phsDepth,phsMix].forEach(el=>el.addEventListener('input', syncPhs));
-phsBtn.addEventListener('click',()=>{ setToggle(phsBtn,!isOn(phsBtn)); saveState(); });
-
-/* Tremolo */
-function syncTrem(){ tremRateVal.textContent=parseFloat(tremRate.value).toFixed(2); tremDepthVal.textContent=parseFloat(tremDepth.value).toFixed(2); tremMixVal.textContent=parseFloat(tremMix.value).toFixed(2);
-  if(tremLFO) tremLFO.frequency.value=parseFloat(tremRate.value);
-  if(tremDepthGain) tremDepthGain.gain.value=parseFloat(tremDepth.value);
-  if(tremWet) tremWet.gain.value=parseFloat(tremMix.value); if(tremDry) tremDry.gain.value=1-parseFloat(tremMix.value);
-  saveState();
-}
-;[tremRate,tremDepth,tremMix].forEach(el=>el.addEventListener('input', syncTrem));
-tremBtn.addEventListener('click',()=>{ setToggle(tremBtn,!isOn(tremBtn)); saveState(); });
-
-/* Delay */
-function syncDelay(){ dlyTimeVal.textContent=parseFloat(dlyTime.value).toFixed(2); dlyFbVal.textContent=parseFloat(dlyFb.value).toFixed(2); dlyMixVal.textContent=parseFloat(dlyMix.value).toFixed(2);
-  if(delayNode) delayNode.delayTime.value=parseFloat(dlyTime.value);
-  if(delayFB) delayFB.gain.value=parseFloat(dlyFb.value);
-  if(delayWet) delayWet.gain.value=parseFloat(dlyMix.value); if(delayDry) delayDry.gain.value=1-parseFloat(dlyMix.value);
-  saveState();
-}
-;[dlyTime,dlyFb,dlyMix].forEach(el=>el.addEventListener('input', syncDelay));
-dlyBtn.addEventListener('click',()=>{ setToggle(dlyBtn,!isOn(dlyBtn)); saveState(); });
-
-/* Reverb */
-function syncReverb(){ rvbMixVal.textContent=parseFloat(rvbMix.value).toFixed(2); rvbLenVal.textContent=parseFloat(rvbLen.value).toFixed(1);
-  if(reverbConv) reverbConv.buffer=createReverbIR(parseFloat(rvbLen.value));
-  if(reverbWet) reverbWet.gain.value=parseFloat(rvbMix.value); if(reverbDry) reverbDry.gain.value=1-parseFloat(rvbMix.value);
-  saveState();
-}
-;[rvbMix,rvbLen].forEach(el=>el.addEventListener('input', syncReverb));
-rvbBtn.addEventListener('click',()=>{ setToggle(rvbBtn,!isOn(rvbBtn)); saveState(); });
-
-/* Leslie */
-function applyLeslieSpeed(){
-  if(!audioContext) return;
-  const mode=lesMode.value;
-  const ramp=parseFloat(lesRamp.value);
   const t=audioContext.currentTime;
-  const fastH=6.5, slowH=0.8, fastD=4.5, slowD=0.5;
-  let targetH=slowH, targetD=slowD;
-  if(mode==='fast'){ targetH=fastH; targetD=fastD; }
-  if(mode==='brake'){ targetH=0.0; targetD=0.0; }
-  if(lesLFOh) lesLFOh.frequency.setTargetAtTime(targetH,t,ramp);
-  if(lesLFOd) lesLFOd.frequency.setTargetAtTime(targetD,t,ramp);
-}
-function syncLeslie(){
-  lesRampVal.textContent=parseFloat(lesRamp.value).toFixed(2);
-  lesXOVal.textContent=lesXO.value;
-  lesWidthVal.textContent=parseFloat(lesWidth.value).toFixed(2);
-  lesMixVal.textContent=parseFloat(lesMix.value).toFixed(2);
-  if(lesXOHi && lesXOLo){ lesXOHi.frequency.value=parseFloat(lesXO.value); lesXOLo.frequency.value=parseFloat(lesXO.value); }
-  if(lesWidthGainH) lesWidthGainH.gain.value=parseFloat(lesWidth.value);
-  if(lesWidthGainD) lesWidthGainD.gain.value=parseFloat(lesWidth.value)*0.7;
-  if(lesWet) lesWet.gain.value=parseFloat(lesMix.value); if(lesDry) lesDry.gain.value=1-parseFloat(lesMix.value);
-  applyLeslieSpeed();
-  saveState();
-}
-;[lesMode,lesRamp,lesXO,lesWidth,lesMix].forEach(el=>el.addEventListener('input', syncLeslie));
-lesBtn.addEventListener('click',()=>{ setToggle(lesBtn,!isOn(lesBtn)); saveState(); });
-
-/* Output */
-outSl.addEventListener('input', ()=>{ outVal.textContent=parseFloat(outSl.value).toFixed(2); if(masterOut) masterOut.gain.value=parseFloat(outSl.value); saveState(); });
-
-/* Amp model voicing */
-function applyAmpModel(jumpDefaults=false){
-  if(!audioContext) return;
-  const model=ampModel.value;
-  const g=parseInt(ampGain.value,10);
-  ampPre.gain.value= dBToLinear(g*0.06); // input push to WS
-  ampWS.curve=makeDistCurve( model==='modern' ? g+45 : model==='plexi' ? g+35 : model.startsWith('blackstar') ? g+38 : g+28 );
-  // tone stack placement stays; adjust gains + mid freq by model
-  const setEQ=(b,mFreq,mGain,t,p, presFreq)=>{
-    ampBassShelf.gain.value=b;
-    ampMidPeak.frequency.value=mFreq; ampMidPeak.gain.value=mGain;
-    ampTreShelf.gain.value=t;
-    ampPresence.gain.value=p; ampPresence.frequency.value=presFreq||4500;
-  };
-  const b= parseFloat(ampBass.value), m= parseFloat(ampMid.value), t= parseFloat(ampTre.value), p= parseFloat(ampPres.value);
-  if(model==='tweed') setEQ(b+2, 650+m*5,  m+1, t-1, p, 3500);
-  else if(model==='blackface') setEQ(b+1, 750+m*5,  m-1, t+1, p+1, 4500);
-  else if(model==='ac30') setEQ(b-1, 1200+m*6, m+1.5, t+1.5, p+1.5, 5000);
-  else if(model==='plexi') setEQ(b+1, 900+m*5,  m+1, t+1, p+1, 4800);
-  else if(model==='modern') setEQ(b,   800+m*4,  m+2, t+2, p+2, 5200);
-  else if(model==='jazz') setEQ(b-1,   650+m*3,  m-1, t+0.5, p-1, 6000);
-  else if(model==='blackstar_clean' || model==='blackstar_crunch'){
-    // ISF shifts mid/treble interaction; 0 = “USA”, 1 = “UK”
-    const isf=parseFloat(ampISF.value);
-    const midFreq = 650 + isf*700;               // shifts center up as UK
-    const trebleTilt = (isf*2)-1;                // -1..+1 tilt
-    setEQ(b + (isf*1.5), midFreq, m + (isf*1.2), t + (trebleTilt*1.0), p + (isf*0.5), 4800+isf*500);
-    ampWS.curve=makeDistCurve((model==='blackstar_crunch' ? g+42 : g+30));
+  if((mode||'direct')==='processed'){
+    procGate.gain.setTargetAtTime(1,t,0.01);
+    directMon.gain.setTargetAtTime(0,t,0.01);
+  }else{
+    procGate.gain.setTargetAtTime(0,t,0.01);
+    directMon.gain.setTargetAtTime(1,t,0.01);
   }
-  // master
-  ampMasterGain.gain.value=parseFloat(ampMaster.value);
 }
 
-/* Cab */
-function applyCab(){
-  const on=isOn(cabBtn);
-  cabLPFNode.frequency.value = on ? parseFloat(cabLPF.value) : 22050;
-  cabLPFVal.textContent=cabLPF.value;
+/* ========= DSP helpers ========= */
+function makeDist(amount){ const k=amount|0, n=44100, curve=new Float32Array(n), deg=Math.PI/180; for(let i=0;i<n;i++){ const x=(i*2/n)-1; curve[i]=(3+k)*x*20*deg/(Math.PI+k*Math.abs(x)); } return curve; }
+function createIR(duration=2.2,decay=1.6){ if(!audioContext) return null; const sr=audioContext.sampleRate, L=Math.floor(sr*duration), buf=audioContext.createBuffer(2,L,sr); for(let ch=0;ch<2;ch++){ const d=buf.getChannelData(ch); for(let i=0;i<L;i++){ const t=i/L; const k=Math.pow(1-t,decay); d[i]=(Math.random()*2-1)*k; } } return buf; }
+function setReverbMix(mix,on){ if(!rvWet||!rvDry) return; const wet=on?mix:0, dry=on?(1-mix):1; rvWet.gain.setValueAtTime(wet,audioContext.currentTime); rvDry.gain.setValueAtTime(dry,audioContext.currentTime); }
+
+/* ========= UI Wiring ========= */
+function wireControls(){
+  monitorSel.addEventListener('change', ()=> setMonitor(monitorSel.value));
+
+  osDSPBtn.addEventListener('click', ()=>{ setToggle(osDSPBtn,!isOn(osDSPBtn)); if(running){ stopAudio(); startAudio(); } });
+
+  trimSl.addEventListener('input', ()=>{ trimVal.textContent=trimSl.value; if(inputTrim) inputTrim.gain.value=dBToLinear(parseFloat(trimSl.value)); });
+  btnCal.addEventListener('click', ()=>{
+    if(!running){ toast('Start Audio first'); return; }
+    const td=new Uint8Array(preAnalyser.fftSize); let acc=0,n=0; const t0=performance.now();
+    (function loop(){
+      preAnalyser.getByteTimeDomainData(td); let sum=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; sum+=v*v; }
+      acc+=Math.sqrt(sum/td.length); n++;
+      if(performance.now()-t0<1000) requestAnimationFrame(loop);
+      else{
+        const avg=acc/Math.max(1,n), target=-18, targetLin=Math.pow(10,target/20);
+        let need=20*Math.log10(targetLin/Math.max(avg,1e-6))+parseFloat(trimSl.value);
+        need=Math.min(24,Math.max(-18,need));
+        trimSl.value=need.toFixed(1); trimVal.textContent=trimSl.value;
+        if(inputTrim) inputTrim.gain.value=dBToLinear(parseFloat(trimSl.value));
+      }
+    })();
+  });
+
+  hpfBtn.addEventListener('click', ()=>{ setToggle(hpfBtn,!isOn(hpfBtn)); if(hpf) hpf.frequency.value = isOn(hpfBtn)?parseFloat(hpfFreq.value):20; });
+  hpfFreq.addEventListener('input', ()=>{ hpfVal.textContent=hpfFreq.value; if(hpf) hpf.frequency.value=parseFloat(hpfFreq.value); });
+
+  function applyDriveUI(){ gainValue.textContent=ampGain.value; if(driveWS) driveWS.curve=makeDist(parseInt(ampGain.value,10)); if(driveWet&&driveDry){ const on=isOn(drvBtn); driveWet.gain.value=on?1:0; driveDry.gain.value=on?0:1; } }
+  drvBtn.addEventListener('click', ()=>{ setToggle(drvBtn,!isOn(drvBtn)); applyDriveUI(); });
+  ampGain.addEventListener('input', applyDriveUI);
+
+  function eqApply(){ eqLowVal.textContent=eqLow.value; eqMidVal.textContent=eqMid.value; eqHighVal.textContent=eqHigh.value;
+    if(eqLowNode) eqLowNode.gain.value=parseFloat(eqLow.value);
+    if(eqMidNode) eqMidNode.gain.value=parseFloat(eqMid.value);
+    if(eqHighNode) eqHighNode.gain.value=parseFloat(eqHigh.value);
+  }
+  [eqLow,eqMid,eqHigh].forEach(el=>el.addEventListener('input', eqApply));
+
+  function compApplyVals(){
+    cThVal.textContent=cTh.value; cRaVal.textContent=parseFloat(cRa.value).toFixed(1);
+    cAtVal.textContent=parseFloat(cAt.value).toFixed(3); cReVal.textContent=parseFloat(cRe.value).toFixed(2);
+    cMkVal.textContent=cMk.value;
+    if(comp){ comp.threshold.value=parseFloat(cTh.value); comp.ratio.value=parseFloat(cRa.value); comp.attack.value=parseFloat(cAt.value); comp.release.value=parseFloat(cRe.value); }
+    if(compMakeup) compMakeup.gain.value=dBToLinear(parseFloat(cMk.value));
+  }
+  [cTh,cRa,cAt,cRe,cMk].forEach(el=>el.addEventListener('input', compApplyVals));
+  compBtn.addEventListener('click', ()=>{ setToggle(compBtn,!isOn(compBtn)); const on=isOn(compBtn); if(comp){ comp.threshold.value= on?parseFloat(cTh.value):0; comp.ratio.value=on?parseFloat(cRa.value):1; comp.attack.value=on?parseFloat(cAt.value):0.001; comp.release.value=on?parseFloat(cRe.value):0.05; } if(compMakeup) compMakeup.gain.value=dBToLinear(on?parseFloat(cMk.value):0); });
+
+  dlyBtn.addEventListener('click', ()=>{ setToggle(dlyBtn,!isOn(dlyBtn)); if(dlyWet) dlyWet.gain.value=isOn(dlyBtn)?parseFloat(dlyMix.value):0; });
+  dlyMix.addEventListener('input', ()=>{ dlyVal.textContent=parseFloat(dlyMix.value).toFixed(2); if(dlyWet) dlyWet.gain.value=isOn(dlyBtn)?parseFloat(dlyMix.value):0; });
+
+  rvbBtn.addEventListener('click', ()=>{ setToggle(rvbBtn,!isOn(rvbBtn)); setReverbMix(parseFloat(rvbMix.value), isOn(rvbBtn)); });
+  rvbMix.addEventListener('input', ()=>{ rvbVal.textContent=parseFloat(rvbMix.value).toFixed(2); setReverbMix(parseFloat(rvbMix.value), isOn(rvbBtn)); });
+
+  lpfBtn.addEventListener('click', ()=>{ setToggle(lpfBtn,!isOn(lpfBtn)); if(lpfNode) lpfNode.frequency.value=isOn(lpfBtn)?parseFloat(lpfFreq.value):22050; });
+  lpfFreq.addEventListener('input', ()=>{ lpfOut.textContent=lpfFreq.value; if(lpfNode) lpfNode.frequency.value=isOn(lpfBtn)?parseFloat(lpfFreq.value):22050; });
+
+  outSl.addEventListener('input', ()=>{ outVal.textContent=parseFloat(outSl.value).toFixed(2); if(masterOut) masterOut.gain.value=parseFloat(outSl.value); });
+
+  presetApply.addEventListener('click', ()=>{ const n=presetSel.value; if(!n){ toast('Pick a built-in preset.'); return; } loadBuiltIn(n); toast(`Loaded: ${n}`); });
+
+  slotSave.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const slots=getSlots(); const nm=(slotName.value||'').trim()||slots[idx].name||`Slot ${idx+1}`; slots[idx]={name:nm,data:collect()}; putSlots(slots); initSlotsUI(); toast(`Saved to ${nm}`); });
+  slotLoad.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const s=getSlots()[idx]; if(!s.data){ toast('Empty slot'); return; } apply(s.data); toast(`Loaded: ${s.name}`); });
+  slotRename.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const slots=getSlots(); const nm=(slotName.value||'').trim(); if(!nm){ toast('Type a name'); return; } slots[idx].name=nm; putSlots(slots); initSlotsUI(); });
+  slotExport.addEventListener('click', ()=>{ const obj={slots:getSlots(), state:collect()}; const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='harp_presets.json'; a.click(); });
+  slotImport.addEventListener('click', ()=>importFile.click());
+  importFile.addEventListener('change', e=>{ const f=e.target.files?.[0]; if(!f) return; const fr=new FileReader(); fr.onload=()=>{ try{ const p=JSON.parse(fr.result); if(p.slots) localStorage.setItem(SLOTS_KEY, JSON.stringify(p.slots)); if(p.state) apply(p.state); initSlotsUI(); toast('Imported.'); }catch{ toast('Invalid file.'); } }; fr.readAsText(f); });
 }
 
-/* ===== Metering ===== */
+/* ========= Hum killer ========= */
+function applyHum(){
+  const mains=(humMains.value==='50')?50:60;
+  const on=isOn(humBtn);
+  hum1.type = on ? 'notch' : 'allpass';
+  hum2.type = (on && isOn(hum2nd)) ? 'notch' : 'allpass';
+  hum1.frequency.value=mains; hum2.frequency.value=mains*2;
+}
+humBtn.addEventListener('click', ()=>{ setToggle(humBtn,!isOn(humBtn)); if(audioContext) applyHum(); });
+hum2nd.addEventListener('click', ()=>{ setToggle(hum2nd,!isOn(hum2nd)); if(audioContext) applyHum(); });
+humMains.addEventListener('change', ()=>{ if(audioContext) applyHum(); });
+
+/* ========= Meters ========= */
+let rafId;
 function startMeters(){
   const postTD=new Uint8Array(postAnalyser.fftSize);
-  const preTD= new Uint8Array(preAnalyser.fftSize);
-  const ctxMain=vuCanvas.getContext('2d'), ctxIn=inCanvas.getContext('2d'), ctxOut=outCanvas.getContext('2d');
-  const loop=()=>{
+  const preTD =new Uint8Array(preAnalyser.fftSize);
+  const ctxV=vuCanvas.getContext('2d'), ctxIn=inCanvas.getContext('2d'), ctxOut=outCanvas.getContext('2d');
+  function level(td){ let sum=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; sum+=v*v; } const rms=Math.sqrt(sum/td.length); return Math.min(1,rms/0.7); }
+  function draw(ctx,canvas,n,leds=28){ const w=canvas.clientWidth,h=canvas.clientHeight; ctx.clearRect(0,0,w,h); const pad=6,gap=2,uw=w-pad*2,ledW=(uw-gap*(leds-1))/leds,ledH=Math.max(8,h-6),y=(h-ledH)/2; const act=Math.round(clamp(n,0,1)*leds); for(let i=0;i<leds;i++){ const x=pad+i*(ledW+gap); const pct=i/(leds-1); let col='#22c55e'; if(pct>0.70&&pct<=0.9) col='#eab308'; if(pct>0.9) col='#ef4444'; ctx.fillStyle=i<act?col:'rgba(148,163,184,0.18)'; ctx.fillRect(x,y,ledW,ledH); } }
+  function loop(){
+    if(!running) return;
     postAnalyser.getByteTimeDomainData(postTD);
     preAnalyser.getByteTimeDomainData(preTD);
-    drawLED(ctxMain,vuCanvas, level(postTD,vuMode));
-    drawLED(ctxOut, outCanvas, level(postTD,'rms'), 18);
-    drawLED(ctxIn,  inCanvas,  level(preTD,'rms'), 18);
-    // Clip & GR
-    const pk=peak(postTD); if(pk>0.99){ clipLED.style.backgroundColor='#ef4444'; setTimeout(()=>clipLED.style.backgroundColor='#64748b', 400); }
-    const red = (limiter && typeof limiter.reduction==='number') ? limiter.reduction : 0; limGR.textContent=(red||0).toFixed(1);
+    draw(ctxV,vuCanvas, level(postTD));
+    draw(ctxOut,outCanvas, level(postTD), 18);
+    draw(ctxIn, inCanvas,  level(preTD), 18);
+    if(typeof limiter.reduction==='number'){ limGR.textContent=limiter.reduction.toFixed(1); }
     rafId=requestAnimationFrame(loop);
-  };
-  if(rafId) cancelAnimationFrame(rafId); rafId=requestAnimationFrame(loop);
+  }
+  sizeAllCanvases();
+  if(rafId) cancelAnimationFrame(rafId);
+  rafId=requestAnimationFrame(loop);
 }
 function stopMeters(){ if(rafId){ cancelAnimationFrame(rafId); rafId=null; } }
-function level(td,mode){ if(mode==='peak'){ let pk=0; for(let i=0;i<td.length;i++){ const s=Math.abs((td[i]-128)/128); if(s>pk) pk=s; } return Math.min(1, pk/0.7);} let sum=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; sum+=v*v; } const rms=Math.sqrt(sum/td.length); return Math.min(1, rms/0.7); }
-function peak(td){ let pk=0; for(let i=0;i<td.length;i++){ const s=Math.abs((td[i]-128)/128); if(s>pk) pk=s; } return pk; }
-function drawLED(ctx,canvasEl,norm,leds=28){ const w=canvasEl.clientWidth,h=canvasEl.clientHeight; ctx.clearRect(0,0,w,h); const pad=6,gap=2,uw=w-pad*2,ledW=(uw-gap*(leds-1))/leds, ledH=Math.max(8,h-6), y=(h-ledH)/2; const act=Math.round(clamp(norm,0,1)*leds); for(let i=0;i<leds;i++){ const x=pad+i*(ledW+gap); const pct=i/(leds-1); let col='#22c55e'; if(pct>0.70 && pct<=0.9) col='#eab308'; if(pct>0.9) col='#ef4444'; ctx.fillStyle = i<act?col:'rgba(148,163,184,0.18)'; roundRect(ctx,x,y,ledW,ledH,3,true); if(i<act){ ctx.fillStyle='rgba(255,255,255,0.18)'; roundRect(ctx,x+1,y+1,Math.max(1,ledW-2),Math.max(2,ledH*0.35),2,true);} } }
-function roundRect(ctx,x,y,w,h,r,fill){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); if(fill) ctx.fill(); else ctx.stroke(); }
-function sizeCanvas(el){ const dpr=Math.max(1,Math.floor(window.devicePixelRatio||1)); const rect=el.getBoundingClientRect(); el.width=Math.floor(rect.width*dpr); el.height=Math.floor(rect.height*dpr); el.getContext('2d').setTransform(dpr,0,0,dpr,0,0); }
+function sizeCanvas(el){ const dpr=Math.max(1,Math.floor(window.devicePixelRatio||1)); const r=el.getBoundingClientRect(); el.width=Math.floor(r.width*dpr); el.height=Math.floor(r.height*dpr); el.getContext('2d').setTransform(dpr,0,0,dpr,0,0); }
 function sizeAllCanvases(){ [vuCanvas,inCanvas,outCanvas].forEach(sizeCanvas); }
 function clearCanvases(){ [vuCanvas,inCanvas,outCanvas].forEach(c=>{ const ctx=c.getContext('2d'); ctx.clearRect(0,0,c.clientWidth,c.clientHeight); }); }
-window.addEventListener('resize', sizeAllCanvases); window.addEventListener('orientationchange', sizeAllCanvases);
+window.addEventListener('resize', sizeAllCanvases);
 
-/* ===== Gate control loop ===== */
-function gateLoop(){
+/* ========= Gate loop ========= */
+function startGateLoop(){
   if(!preAnalyser||!gateGain) return;
   const td=new Uint8Array(preAnalyser.fftSize);
   (function step(){
-    if(!isRunning) return;
+    if(!running) return;
     preAnalyser.getByteTimeDomainData(td);
     let sum=0; for(let i=0;i<td.length;i++){ const v=(td[i]-128)/128; sum+=v*v; }
     const rms=Math.sqrt(sum/td.length); const dB=linearToDb(rms);
     const thr=parseFloat(gateTh.value), rel=parseFloat(gateRl.value);
-    if(isOn(gateBtn)){ const t=audioContext.currentTime; if(dB<thr) gateGain.gain.setTargetAtTime(0,t,rel); else gateGain.gain.setTargetAtTime(1,t,0.01); }
-    else gateGain.gain.setTargetAtTime(1,audioContext.currentTime,0.01);
+    const t=audioContext.currentTime;
+    if(isOn(gateBtn)){ if(dB<thr) gateGain.gain.setTargetAtTime(0,t,rel); else gateGain.gain.setTargetAtTime(1,t,0.01); }
+    else gateGain.gain.setTargetAtTime(1,t,0.01);
     requestAnimationFrame(step);
   })();
 }
-function startGate(){ gateLoop(); }
 
-/* ===== Presets ===== */
+/* ========= Presets (built-in) ========= */
 const builtIns={
-  "Clean Chorus":      { amp:"blackface", g:12, b:1, m:-1, t:2, p:1, master:0.95, isf:0.5, cab:true, lp:9500, od:false, odG:8, odT:0.55, odM:0.2, dist:false, diG:0, diT:0.5, diM:0.3, fuzz:false, fzG:0, fzT:0.5, fzM:0.3, wah:false, wF:1400, wQ:3.2, chor:true, chR:0.6, chD:0.45, chM:0.25, phs:false, phR:0.4, phD:0.6, phM:0.2, trem:false, trR:4.5, trD:0.6, trM:0.4, dly:true, dT:0.35, dF:0.35, dM:0.22, rvb:true, rM:0.18, rL:2.2, les:false, lMode:"slow", lRamp:0.8, lXO:800, lW:0.8, lM:0.4 },
-  "’80s Rack":        { amp:"modern", g:22, b:0, m:2, t:2, p:2, master:0.9, isf:0.5, cab:true, lp:9000, od:false, odG:12, odT:0.5, odM:0.3, dist:true, diG:30, diT:0.6, diM:0.35, fuzz:false, wah:false, chor:true, chR:1.1, chD:0.5, chM:0.35, phs:false, trem:false, dly:true, dT:0.45, dF:0.35, dM:0.28, rvb:true, rM:0.24, rL:3.2, les:false, lMode:"slow", lRamp:0.8, lXO:900, lW:0.7, lM:0.3 },
-  "Plexi Lead":       { amp:"plexi", g:35, b:1, m:2, t:1, p:1, master:0.88, isf:0.5, cab:true, lp:8500, od:true, odG:10, odT:0.55, odM:0.5, dist:false, fuzz:false, wah:false, chor:false, phs:false, trem:false, dly:true, dT:0.32, dF:0.25, dM:0.18, rvb:true, rM:0.12, rL:1.8, les:false, lMode:"slow", lRamp:0.8, lXO:800, lW:0.6, lM:0.2 },
-  "AC30 Chime":       { amp:"ac30", g:18, b:-1, m:1.5, t:2, p:1.5, master:0.95, isf:0.5, cab:true, lp:10000, od:false, dist:false, fuzz:false, wah:false, chor:true, chR:0.8, chD:0.35, chM:0.20, phs:false, trem:true, trR:7.0, trD:0.5, trM:0.35, dly:false, rvb:true, rM:0.16, rL:2.0, les:false, lMode:"slow", lRamp:0.8, lXO:1000, lW:0.7, lM:0.25 },
-  "Blackstar Crunch": { amp:"blackstar_crunch", g:32, b:1.2, m:1.2, t:0.5, p:0.8, master:0.9, isf:0.65, cab:true, lp:9000, od:true, odG:8, odT:0.55, odM:0.5, dist:false, fuzz:false, wah:false, chor:false, phs:true, phR:0.35, phD:0.6, phM:0.2, trem:false, dly:true, dT:0.28, dF:0.25, dM:0.20, rvb:true, rM:0.14, rL:1.8, les:false, lMode:"slow", lRamp:0.8, lXO:900, lW:0.75, lM:0.3 },
-  "Rotary Organ":     { amp:"jazz", g:8, b:-1, m:-1, t:1, p:-1, master:1.0, isf:0.5, cab:false, lp:12000, od:false, dist:false, fuzz:false, wah:false, chor:false, phs:false, trem:false, dly:false, rvb:true, rM:0.18, rL:2.2, les:true, lMode:"fast", lRamp:1.2, lXO:800, lW:0.9, lM:0.8 },
-  "Jazz Lush":        { amp:"jazz", g:10, b:-1, m:-1, t:1, p:-1, master:1.0, isf:0.5, cab:true, lp:12000, od:false, dist:false, fuzz:false, wah:false, chor:true, chR:0.5, chD:0.35, chM:0.22, phs:false, trem:false, dly:false, rvb:true, rM:0.22, rL:2.6, les:false, lMode:"slow", lRamp:0.8, lXO:900, lW:0.7, lM:0.25 },
-  "Surf Trem":        { amp:"blackface", g:12, b:1, m:-1, t:3, p:1, master:0.95, isf:0.5, cab:true, lp:12000, od:false, dist:false, fuzz:false, wah:false, chor:false, phs:false, trem:true, trR:6.0, trD:0.7, trM:0.6, dly:false, rvb:true, rM:0.28, rL:3.2, les:false, lMode:"slow", lRamp:0.8, lXO:900, lW:0.7, lM:0.2 }
+  "Classic Chicago":  ()=>({ drv:true,gain:35,hpf:true,hpfHz:120, hum:false, eq:{l:1,m:1,t:-1}, comp:{th:-24,ra:3.0,at:0.01,re:0.18,mk:2}, dly:{on:true,mix:0.18}, rvb:{on:true,mix:0.16}, lpf:{on:true,hz:9000}, out:1 }),
+  "Crunch Amp":       ()=>({ drv:true,gain:48,hpf:true,hpfHz:100, hum:false, eq:{l:2,m:2,t:0},  comp:{th:-20,ra:4.0,at:0.006,re:0.12,mk:2}, dly:{on:false,mix:0.0}, rvb:{on:true,mix:0.14}, lpf:{on:true,hz:8500}, out:0.95 }),
+  "Fat Low End":      ()=>({ drv:false,gain:18,hpf:true,hpfHz:80,  hum:false, eq:{l:3,m:-1,t:-2}, comp:{th:-26,ra:2.5,at:0.015,re:0.2,mk:3}, dly:{on:false,mix:0.0}, rvb:{on:true,mix:0.18}, lpf:{on:false,hz:12000}, out:1 }),
+  "Bright Cut":       ()=>({ drv:true,gain:22,hpf:true,hpfHz:120, hum:false, eq:{l:-1,m:0,t:2}, comp:{th:-22,ra:2.8,at:0.012,re:0.18,mk:2}, dly:{on:true,mix:0.12}, rvb:{on:true,mix:0.10}, lpf:{on:true,hz:9500}, out:1 }),
+  "Little Walter Cup":()=>({ drv:true,gain:28,hpf:true,hpfHz:110, hum:true, eq:{l:1,m:-1,t:-1}, comp:{th:-23,ra:3.0,at:0.010,re:0.16,mk:2}, dly:{on:false,mix:0}, rvb:{on:true,mix:0.14}, lpf:{on:true,hz:9000}, out:1 }),
+  "Country Clean":    ()=>({ drv:false,gain:12,hpf:true,hpfHz:100, hum:false, eq:{l:0,m:-1,t:2}, comp:{th:-18,ra:2.2,at:0.006,re:0.12,mk:1}, dly:{on:true,mix:0.16}, rvb:{on:true,mix:0.12}, lpf:{on:false,hz:12000}, out:1 }),
+  "Dark Mellow":      ()=>({ drv:false,gain:8, hpf:true,hpfHz:120, hum:false, eq:{l:2,m:-2,t:-3},comp:{th:-24,ra:2.0,at:0.015,re:0.20,mk:3}, dly:{on:false,mix:0}, rvb:{on:true,mix:0.20}, lpf:{on:true,hz:8000}, out:1 }),
+  "Lo-Fi Amp":        ()=>({ drv:true,gain:60,hpf:true,hpfHz:140, hum:true,  eq:{l:-3,m:0,t:-2},comp:{th:-26,ra:6.0,at:0.003,re:0.10,mk:4}, dly:{on:false,mix:0}, rvb:{on:false,mix:0}, lpf:{on:true,hz:6500}, out:0.95 }),
+  "Big Room":         ()=>({ drv:false,gain:10,hpf:true,hpfHz:80,  hum:false, eq:{l:0,m:0,t:0},  comp:{th:-22,ra:2.5,at:0.010,re:0.18,mk:2}, dly:{on:true,mix:0.22}, rvb:{on:true,mix:0.26}, lpf:{on:false,hz:12000}, out:1 }),
+  "Cut Through Band": ()=>({ drv:true,gain:38,hpf:true,hpfHz:120, hum:false, eq:{l:1,m:2,t:2}, comp:{th:-20,ra:3.2,at:0.008,re:0.14,mk:3}, dly:{on:true,mix:0.12}, rvb:{on:true,mix:0.12}, lpf:{on:true,hz:9500}, out:1 }),
+  "Modern Blues Rock":()=>({ drv:true,gain:55,hpf:true,hpfHz:130, hum:false, eq:{l:0,m:2,t:1},  comp:{th:-22,ra:4.0,at:0.006,re:0.12,mk:2}, dly:{on:false,mix:0}, rvb:{on:true,mix:0.10}, lpf:{on:true,hz:9000}, out:0.95 }),
+  "Vintage Jazz Tone":()=>({ drv:false,gain:10,hpf:true,hpfHz:90,  hum:false, eq:{l:-1,m:-1,t:1}, comp:{th:-24,ra:2.0,at:0.012,re:0.18,mk:2}, dly:{on:false,mix:0}, rvb:{on:true,mix:0.18}, lpf:{on:false,hz:12000}, out:1 }),
+  "Country Bright":   ()=>({ drv:false,gain:8, hpf:true,hpfHz:100, hum:false, eq:{l:-1,m:-1,t:3},comp:{th:-20,ra:2.5,at:0.008,re:0.14,mk:1}, dly:{on:true,mix:0.14}, rvb:{on:true,mix:0.12}, lpf:{on:false,hz:12000}, out:1 })
 };
-presetApply.addEventListener('click', ()=>{ const n=presetSel.value; if(!n){ toast('Pick a built-in preset.'); return; } loadBuiltIn(builtIns[n]); toast(`Loaded: ${n}`); });
-function loadBuiltIn(p){ if(!p) return;
-  ampModel.value=p.amp; ampGain.value=p.g; ampBass.value=p.b; ampMid.value=p.m; ampTre.value=p.t; ampPres.value=p.p; ampMaster.value=p.master; ampISF.value=p.isf;
-  cabLPF.value=p.lp; setToggle(cabBtn, !!p.cab);
-  setToggle(odBtn, !!p.od); odGain.value=p.odG||0; odTone.value=p.odT||0.5; odMix.value=p.odM||0.5;
-  setToggle(distBtn, !!p.dist); distGain.value=p.diG||0; distTone.value=p.diT||0.5; distMix.value=p.diM||0.4;
-  setToggle(fuzzBtn, !!p.fuzz); fuzzGain.value=p.fzG||0; fuzzTone.value=p.fzT||0.5; fuzzMix.value=p.fzM||0.4;
-  setToggle(wahBtn, !!p.wah); wahFreq.value=p.wF||1400; wahQ.value=p.wQ||3.2;
-  setToggle(chorBtn, !!p.chor); chorRate.value=p.chR||0.6; chorDepth.value=p.chD||0.5; chorMix.value=p.chM||0.25;
-  setToggle(phsBtn, !!p.phs); phsRate.value=p.phR||0.4; phsDepth.value=p.phD||0.7; phsMix.value=p.phM||0.2;
-  setToggle(tremBtn, !!p.trem); tremRate.value=p.trR||4.5; tremDepth.value=p.trD||0.6; tremMix.value=p.trM||0.4;
-  setToggle(dlyBtn, !!p.dly); dlyTime.value=p.dT||0.35; dlyFb.value=p.dF||0.3; dlyMix.value=p.dM||0.25;
-  setToggle(rvbBtn, !!p.rvb); rvbMix.value=p.rM||0.18; rvbLen.value=p.rL||2.4;
-  setToggle(lesBtn, !!p.les); lesMode.value=p.lMode||'slow'; lesRamp.value=p.lRamp||0.8; lesXO.value=p.lXO||800; lesWidth.value=p.lW||0.85; lesMix.value=p.lM||0.5;
-  syncAmpControls(); applyCab(); syncDirt(); syncWah(); syncChor(); syncPhs(); syncTrem(); syncDelay(); syncReverb(); syncLeslie();
+function loadBuiltIn(name){
+  const f=builtIns[name]; if(!f) return;
+  const p=f();
+  setToggle(drvBtn, !!p.drv); ampGain.value=p.gain; gainValue.textContent=ampGain.value; if(driveWS){ driveWS.curve=makeDist(parseInt(ampGain.value,10)); driveWet.gain.value=p.drv?1:0; driveDry.gain.value=p.drv?0:1; }
+  setToggle(hpfBtn, !!p.hpf); hpfFreq.value=p.hpfHz; hpfVal.textContent=p.hpfHz; if(hpf) hpf.frequency.value = p.hpf ? p.hpfHz : 20;
+  setToggle(humBtn, !!p.hum); applyHum();
+  if(eqLowNode){ eqLow.value=p.eq.l; eqMid.value=p.eq.m; eqHigh.value=p.eq.t; eqLowVal.textContent=eqLow.value; eqMidVal.textContent=eqMid.value; eqHighVal.textContent=eqHigh.value; eqLowNode.gain.value=parseFloat(eqLow.value); eqMidNode.gain.value=parseFloat(eqMid.value); eqHighNode.gain.value=parseFloat(eqHigh.value); }
+  setToggle(compBtn,true); cTh.value=p.comp.th; cRa.value=p.comp.ra; cAt.value=p.comp.at; cRe.value=p.comp.re; cMk.value=p.comp.mk; cThVal.textContent=cTh.value; cRaVal.textContent=parseFloat(cRa.value).toFixed(1); cAtVal.textContent=parseFloat(cAt.value).toFixed(3); cReVal.textContent=parseFloat(cRe.value).toFixed(2); cMkVal.textContent=cMk.value; if(comp){ comp.threshold.value=p.comp.th; comp.ratio.value=p.comp.ra; comp.attack.value=p.comp.at; comp.release.value=p.comp.re; } if(compMakeup) compMakeup.gain.value=dBToLinear(p.comp.mk);
+  setToggle(dlyBtn, !!p.dly.on); dlyMix.value=p.dly.mix; dlyVal.textContent=parseFloat(dlyMix.value).toFixed(2); if(dlyWet) dlyWet.gain.value=p.dly.on?p.dly.mix:0;
+  setToggle(rvbBtn, !!p.rvb.on); rvbMix.value=p.rvb.mix; rvbVal.textContent=parseFloat(rvbMix.value).toFixed(2); setReverbMix(parseFloat(rvbMix.value), !!p.rvb.on);
+  setToggle(lpfBtn, !!p.lpf.on); lpfFreq.value=p.lpf.hz; lpfOut.textContent=p.lpf.hz; if(lpfNode) lpfNode.frequency.value=p.lpf.on?p.lpf.hz:22050;
+  outSl.value=p.out; outVal.textContent=parseFloat(outSl.value).toFixed(2); if(masterOut) masterOut.gain.value=parseFloat(outSl.value);
 }
 
-/* ===== Slots (10) ===== */
-const SLOTS_KEY='gtrRigSlotsV1', STATE_KEY='gtrRigStateV1';
-function emptySlots(){ return Array.from({length:10},(_,i)=>({name:`Slot ${i+1}`,data:null})); }
-function getSlots(){ try{ const raw=localStorage.getItem(SLOTS_KEY); if(!raw) return emptySlots(); const p=JSON.parse(raw); if(!Array.isArray(p)||p.length!==10) return emptySlots(); return p; }catch{ return emptySlots(); } }
+/* ========= User Presets ========= */
+const SLOTS_KEY='harpSlotsV1';
+function emptySlots(){ return Array.from({length:10},(_,i)=>({name:`Slot ${i+1}`, data:null})); }
+function getSlots(){ try{ const raw=localStorage.getItem(SLOTS_KEY); if(!raw) return emptySlots(); const p=JSON.parse(raw); return Array.isArray(p)&&p.length===10?p:emptySlots(); }catch{ return emptySlots(); } }
 function putSlots(s){ localStorage.setItem(SLOTS_KEY, JSON.stringify(s)); }
-function initSlotsUI(){
-  const slots=getSlots(); slotSel.innerHTML=''; slots.forEach((s,i)=>{ const o=document.createElement('option'); o.value=String(i); o.textContent=s.data? s.name : `${s.name} (empty)`; slotSel.appendChild(o); });
-  slotGrid.innerHTML=''; slots.forEach((s,i)=>{ const b=document.createElement('button'); b.className='slotbtn'; b.textContent= s.name.length>18? s.name.slice(0,18)+'…' : s.name; if(!s.data){ b.style.opacity='.55'; b.title='empty'; } b.addEventListener('click',()=>{ const sl=getSlots()[i]; if(!sl.data){ toast('Empty slot'); return; } applySettings(sl.data); toast(`Loaded: ${sl.name}`); }); slotGrid.appendChild(b); });
-}
-slotSave.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const slots=getSlots(); const nm=(slotName.value||'').trim()||slots[idx].name||`Slot ${idx+1}`; slots[idx]={name:nm, data:collectSettings()}; putSlots(slots); initSlotsUI(); toast(`Saved to ${nm}`); });
-slotLoad.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const s=getSlots()[idx]; if(!s.data){ toast('That slot is empty.'); return; } applySettings(s.data); toast(`Loaded: ${s.name}`); });
-slotRename.addEventListener('click', ()=>{ const idx=parseInt(slotSel.value||'0',10); const slots=getSlots(); const nm=(slotName.value||'').trim(); if(!nm){ toast('Type a name to rename.'); return; } slots[idx].name=nm; putSlots(slots); initSlotsUI(); toast(`Renamed slot ${idx+1} to ${nm}`); });
-slotExport.addEventListener('click', ()=>{ const obj={slots:getSlots(), state:collectSettings()}; const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='guitar_keys_presets.json'; document.body.appendChild(a); a.click(); a.remove(); });
-slotImport.addEventListener('click', ()=>importFile.click());
-importFile.addEventListener('change', e=>{ const f=e.target.files?.[0]; if(!f) return; const fr=new FileReader(); fr.onload=()=>{ try{ const parsed=JSON.parse(fr.result); if(parsed.slots && Array.isArray(parsed.slots) && parsed.slots.length===10){ localStorage.setItem(SLOTS_KEY, JSON.stringify(parsed.slots)); } if(parsed.state) applySettings(parsed.state); initSlotsUI(); toast('Imported presets.'); }catch{ toast('Invalid file.'); } }; fr.readAsText(f); });
+function initSlotsUI(){ const slots=getSlots(); slotSel.innerHTML=''; slots.forEach((s,i)=>{ const o=document.createElement('option'); o.value=String(i); o.textContent=s.data?s.name:`${s.name} (empty)`; slotSel.appendChild(o); }); slotGrid.innerHTML=''; slots.forEach((s,i)=>{ const b=document.createElement('button'); b.className='slotbtn'; b.textContent=s.name.length>18?s.name.slice(0,18)+'…':s.name; if(!s.data) b.style.opacity='.55'; b.addEventListener('click',()=>{ const sl=getSlots()[i]; if(!sl.data){ toast('Empty slot'); return; } apply(sl.data); toast(`Loaded: ${sl.name}`); }); slotGrid.appendChild(b); }); }
+function collect(){ return {
+  mon:monitorSel.value, dsp:isOn(osDSPBtn),
+  trim:parseFloat(trimSl.value),
+  gate:isOn(gateBtn), gTh:parseFloat(gateTh.value), gRl:parseFloat(gateRl.value),
+  hpf:isOn(hpfBtn), hpfHz:parseFloat(hpfFreq.value),
+  hum:isOn(humBtn), mains:humMains.value, h2:isOn(hum2nd),
+  drv:isOn(drvBtn), gain:parseInt(ampGain.value,10),
+  eql:parseFloat(eqLow.value), eqm:parseFloat(eqMid.value), eqh:parseFloat(eqHigh.value),
+  cTh:parseFloat(cTh.value), cRa:parseFloat(cRa.value), cAt:parseFloat(cAt.value), cRe:parseFloat(cRe.value), cMk:parseFloat(cMk.value), cOn:isOn(compBtn),
+  dly:isOn(dlyBtn), dMix:parseFloat(dlyMix.value),
+  rvb:isOn(rvbBtn), rMix:parseFloat(rvbMix.value),
+  lpf:isOn(lpfBtn), lpfHz:parseFloat(lpfFreq.value),
+  out:parseFloat(outSl.value)
+};}
+function apply(s){
+  monitorSel.value=s.mon||'direct'; setMonitor(monitorSel.value);
+  setToggle(osDSPBtn, !!s.dsp);
 
-function collectSettings(){
-  return {
-    monitor:monitorSel.value, osDSP:isOn(osDSPBtn),
-    trim:parseFloat(trimSl.value), gate:isOn(gateBtn), gTh:parseFloat(gateTh.value), gRel:parseFloat(gateRl.value),
-    amp:ampModel.value, aG:parseInt(ampGain.value,10), aB:parseFloat(ampBass.value), aM:parseFloat(ampMid.value), aT:parseFloat(ampTre.value), aP:parseFloat(ampPres.value), aMaster:parseFloat(ampMaster.value), aISF:parseFloat(ampISF.value),
-    cab:isOn(cabBtn), cabType:cabType.value, cabLPF:parseFloat(cabLPF.value),
-    od:isOn(odBtn), odG:parseInt(odGain.value,10), odT:parseFloat(odTone.value), odM:parseFloat(odMix.value),
-    dist:isOn(distBtn), diG:parseInt(distGain.value,10), diT:parseFloat(distTone.value), diM:parseFloat(distMix.value),
-    fuzz:isOn(fuzzBtn), fzG:parseInt(fuzzGain.value,10), fzT:parseFloat(fuzzTone.value), fzM:parseFloat(fuzzMix.value),
-    wah:isOn(wahBtn), wF:parseFloat(wahFreq.value), wQ:parseFloat(wahQ.value),
-    chor:isOn(chorBtn), chR:parseFloat(chorRate.value), chD:parseFloat(chorDepth.value), chM:parseFloat(chorMix.value),
-    phs:isOn(phsBtn), phR:parseFloat(phsRate.value), phD:parseFloat(phsDepth.value), phM:parseFloat(phsMix.value),
-    trem:isOn(tremBtn), trR:parseFloat(tremRate.value), trD:parseFloat(tremDepth.value), trM:parseFloat(tremMix.value),
-    dly:isOn(dlyBtn), dT:parseFloat(dlyTime.value), dF:parseFloat(dlyFb.value), dM:parseFloat(dlyMix.value),
-    rvb:isOn(rvbBtn), rM:parseFloat(rvbMix.value), rL:parseFloat(rvbLen.value),
-    les:isOn(lesBtn), lMode:lesMode.value, lRamp:parseFloat(lesRamp.value), lXO:parseFloat(lesXO.value), lW:parseFloat(lesWidth.value), lM:parseFloat(lesMix.value),
-    out:parseFloat(outSl.value), vuMode
-  };
-}
-function applySettings(s){
-  monitorSel.value=s.monitor||'direct'; setMonitor(monitorSel.value);
-  setToggle(osDSPBtn, !!s.osDSP);
   trimSl.value=s.trim??0; trimVal.textContent=trimSl.value;
-  setToggle(gateBtn, !!s.gate); gateTh.value=s.gTh??-60; gateRl.value=s.gRel??0.18; gateThVal.textContent=gateTh.value; gateRlVal.textContent=parseFloat(gateRl.value).toFixed(2);
-  ampModel.value=s.amp||'blackface'; ampGain.value=s.aG??12; ampBass.value=s.aB??0; ampMid.value=s.aM??0; ampTre.value=s.aT??0; ampPres.value=s.aP??0; ampMaster.value=s.aMaster??1; ampISF.value=s.aISF??0.5; syncAmpControls(); toggleISF();
-  setToggle(cabBtn, !!s.cab); cabType.value=s.cabType||'2x12'; cabLPF.value=s.cabLPF??9000; cabLPFVal.textContent=cabLPF.value; applyCab();
-  setToggle(odBtn, !!s.od); odGain.value=s.odG??12; odTone.value=s.odT??0.5; odMix.value=s.odM??0.6;
-  setToggle(distBtn, !!s.dist); distGain.value=s.diG??0; distTone.value=s.diT??0.5; distMix.value=s.diM??0.4;
-  setToggle(fuzzBtn, !!s.fuzz); fuzzGain.value=s.fzG??0; fuzzTone.value=s.fzT??0.5; fuzzMix.value=s.fzM??0.4; syncDirt();
-  setToggle(wahBtn, !!s.wah); wahFreq.value=s.wF??1400; wahQ.value=s.wQ??3.2; syncWah();
-  setToggle(chorBtn, !!s.chor); chorRate.value=s.chR??0.6; chorDepth.value=s.chD??0.5; chorMix.value=s.chM??0.25; syncChor();
-  setToggle(phsBtn, !!s.phs); phsRate.value=s.phR??0.4; phsDepth.value=s.phD??0.7; phsMix.value=s.phM??0.2; syncPhs();
-  setToggle(tremBtn, !!s.trem); tremRate.value=s.trR??4.5; tremDepth.value=s.trD??0.6; tremMix.value=s.trM??0.4; syncTrem();
-  setToggle(dlyBtn, !!s.dly); dlyTime.value=s.dT??0.35; dlyFb.value=s.dF??0.35; dlyMix.value=s.dM??0.25; syncDelay();
-  setToggle(rvbBtn, !!s.rvb); rvbMix.value=s.rM??0.18; rvbLen.value=s.rL??2.4; syncReverb();
-  setToggle(lesBtn, !!s.les); lesMode.value=s.lMode||'slow'; lesRamp.value=s.lRamp??0.8; lesXO.value=s.lXO??800; lesWidth.value=s.lW??0.85; lesMix.value=s.lM??0.5; syncLeslie();
-  outSl.value=s.out??1; outVal.textContent=parseFloat(outSl.value).toFixed(2);
-  vuMode=s.vuMode||'rms'; vuBtn.textContent=vuMode.toUpperCase();
+
+  setToggle(gateBtn, !!s.gate); gateTh.value=s.gTh??-60; gateRl.value=s.gRl??0.18; gateThVal.textContent=gateTh.value; gateRlVal.textContent=parseFloat(gateRl.value).toFixed(2);
+
+  setToggle(hpfBtn, !!s.hpf); hpfFreq.value=s.hpfHz??100; hpfVal.textContent=hpfFreq.value; if(hpf) hpf.frequency.value=isOn(hpfBtn)?parseFloat(hpfFreq.value):20;
+
+  setToggle(humBtn, !!s.hum); humMains.value=s.mains||'60'; setToggle(hum2nd, !!s.h2); applyHum();
+
+  setToggle(drvBtn, !!s.drv); ampGain.value=s.gain??25; gainValue.textContent=ampGain.value; if(driveWS) driveWS.curve=makeDist(parseInt(ampGain.value,10)); if(driveWet&&driveDry){ driveWet.gain.value=isOn(drvBtn)?1:0; driveDry.gain.value=isOn(drvBtn)?0:1; }
+
+  eqLow.value=s.eql??0; eqMid.value=s.eqm??0; eqHigh.value=s.eqh??0; eqLowVal.textContent=eqLow.value; eqMidVal.textContent=eqMid.value; eqHighVal.textContent=eqHigh.value;
+  if(eqLowNode){ eqLowNode.gain.value=parseFloat(eqLow.value); eqMidNode.gain.value=parseFloat(eqMid.value); eqHighNode.gain.value=parseFloat(eqHigh.value); }
+
+  setToggle(compBtn, !!s.cOn); cTh.value=s.cTh??-22; cRa.value=s.cRa??3.0; cAt.value=s.cAt??0.012; cRe.value=s.cRe??0.18; cMk.value=s.cMk??2; cThVal.textContent=cTh.value; cRaVal.textContent=parseFloat(cRa.value).toFixed(1); cAtVal.textContent=parseFloat(cAt.value).toFixed(3); cReVal.textContent=parseFloat(cRe.value).toFixed(2); cMkVal.textContent=cMk.value; if(comp){ comp.threshold.value=parseFloat(cTh.value); comp.ratio.value=parseFloat(cRa.value); comp.attack.value=parseFloat(cAt.value); comp.release.value=parseFloat(cRe.value); } if(compMakeup) compMakeup.gain.value=dBToLinear(parseFloat(cMk.value));
+
+  setToggle(dlyBtn, !!s.dly); dlyMix.value=s.dMix??0.2; dlyVal.textContent=parseFloat(dlyMix.value).toFixed(2); if(dlyWet) dlyWet.gain.value=isOn(dlyBtn)?parseFloat(dlyMix.value):0;
+
+  setToggle(rvbBtn, !!s.rvb); rvbMix.value=s.rMix??0.15; rvbVal.textContent=parseFloat(rvbMix.value).toFixed(2); setReverbMix(parseFloat(rvbMix.value), isOn(rvbBtn));
+
+  setToggle(lpfBtn, !!s.lpf); lpfFreq.value=s.lpfHz??9500; lpfOut.textContent=lpfFreq.value; if(lpfNode) lpfNode.frequency.value=isOn(lpfBtn)?parseFloat(lpfFreq.value):22050;
+
+  outSl.value=s.out??1; outVal.textContent=parseFloat(outSl.value).toFixed(2); if(masterOut) masterOut.gain.value=parseFloat(outSl.value);
 }
 
-/* ===== Persist ===== */
-function saveState(){ try{ localStorage.setItem(STATE_KEY, JSON.stringify(collectSettings())); }catch{} }
-function restoreState(){ try{ const raw=localStorage.getItem(STATE_KEY); if(!raw) return; const s=JSON.parse(raw); applySettings(s); }catch{} }
-
-/* ===== VU Mode ===== */
-vuBtn.addEventListener('click', ()=>{ vuMode=(vuMode==='rms'?'peak':'rms'); vuBtn.textContent=vuMode.toUpperCase(); saveState(); });
-
-/* ===== Start background loops ===== */
-window.addEventListener('load', ()=>{ sizeAllCanvases(); startGate(); });
-
+/* ========= Canvas sizing ========= */
+function sizeCanvas(el){ const dpr=Math.max(1,Math.floor(window.devicePixelRatio||1)); const r=el.getBoundingClientRect(); el.width=Math.floor(r.width*dpr); el.height=Math.floor(r.height*dpr); el.getContext('2d').setTransform(dpr,0,0,dpr,0,0); }
+function sizeAllCanvases(){ [vuCanvas,inCanvas,outCanvas].forEach(sizeCanvas); }
+function clearCanvases(){ [vuCanvas,inCanvas,outCanvas].forEach(c=>{ const ctx=c.getContext('2d'); ctx.clearRect(0,0,c.clientWidth,c.clientHeight); }); }
+window.addEventListener('resize', sizeAllCanvases);
+window.addEventListener('load', ()=>{ sizeAllCanvases(); });
 </script>
 </body>
 </html>
